@@ -1,0 +1,28 @@
+version: "3.7"
+
+services:
+  mybudget-db:
+    container_name: mybudget-db
+    image: microsoft/mssql-server-linux:latest
+    restart: unless-stopped
+    environment:
+      ACCEPT_EULA: Y
+      SA_PASSWORD: password
+    ports:
+      - "1433:1433"
+    volumes:
+      - type: volume
+        source: mybudget-data
+        target: /var/opt/mssql
+
+  mybudget-webui:
+    container_name: mybudget-webui
+    image: salasrock:5000/mybudget:latest
+    restart: unless-stopped
+    ports:
+      - "8089:80"
+    depends_on:
+      - mybudget-db
+
+volumes:
+  mybudget-data:

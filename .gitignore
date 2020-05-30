@@ -1,0 +1,17 @@
+# Ignore
+db
+etc
+var
+data
+config
+conf
+work
+backups
+logs
+*provisioning
+dav
+
+hass
+letsencrypt
+mqtt
+plex

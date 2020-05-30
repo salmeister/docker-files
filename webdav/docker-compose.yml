@@ -1,0 +1,16 @@
+version: '3'
+services:
+  webdav:
+    container_name: webdav
+    image: bytemark/webdav
+    restart: always
+    ports:
+      - "8456:80"
+    environment:
+      - AUTH_TYPE=Basic
+      - USERNAME=user
+      - PASSWORD=password
+      - ANONYMOUS_METHODS=OPTIONS
+    volumes:
+#      - /etc/passwd:/user.passwd
+      - /nas/docker/webdav/dav:/var/lib/dav

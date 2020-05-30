@@ -1,0 +1,22 @@
+version: '3.2'
+services:
+  telegraf:
+    container_name: telegraf
+    image: telegraf:latest
+    environment:
+      - HOST_PROC=/rootfs/proc
+      - HOST_SYS=/root/sys
+      - HOST_ETC=/root/etc
+    volumes:
+      - /nas/docker/telegraf/config/telegraf.conf:/etc/telegraf/telegraf.conf:ro
+      - /proc:/rootfs/proc:ro
+      - /sys:/rootfs/sys:ro
+      - /etc:/rootfs/etc:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    ports:
+      - '19999:19999'
+    restart: always
+    ports:
+      - "8092:8092/udp"
+      - 8094:8094
+      - "8125:8125/udp"

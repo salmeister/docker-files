@@ -1,0 +1,8 @@
+version: '3'
+services:
+    tf:
+      container_name: tensorflow
+      image: tensorflow/tensorflow
+      network_mode: host
+      volumes:
+        - /nas/docker/tensorflow/data:/notebooks      

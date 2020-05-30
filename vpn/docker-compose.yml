@@ -1,0 +1,30 @@
+version: '3.3'
+services:
+    transmission-openvpn:
+        container_name: vpn
+        restart: always
+        volumes:
+            - /nas/docker/vpn/config/Canada-East.ovpn:/etc/openvpn/custom/default.ovpn
+            - /nas/docker/vpn/config/auth.txt:/etc/openvpn/custom/auth.txt
+            - /nas/docker/vpn/data:/data
+            - /etc/localtime:/etc/localtime:ro
+        environment:
+            - CREATE_TUN_DEVICE=true
+            - WEBPROXY_ENABLED=false
+            - OPENVPN_PROVIDER=CUSTOM
+            - OPENVPN_USERNAME=user
+            - OPENVPN_PASSWORD=password
+            - LOCAL_NETWORK=192.168.1.0/24
+            - PUID=1000
+            - GUID=1002
+            - TRANSMISSION_SCRAPE_PAUSED_TORRENTS_ENABLED=false
+        cap_add:
+            - NET_ADMIN
+        logging:
+            driver: json-file
+            options:
+                max-size: 10m
+        network_mode: bridge
+        ports:
+            - 9091:9091
+        image: haugene/transmission-openvpn:latest

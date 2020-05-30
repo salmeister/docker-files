@@ -1,0 +1,16 @@
+version: "3"
+services:
+    db:
+        image: "postgres:latest"
+        container_name: "postgres"
+        ports:
+            - "5432:5432"
+        network_mode: bridge
+        restart: unless-stopped
+        environment:
+            - POSTGRES_DB=homeassistant
+            - POSTGRES_USER=hass
+            - POSTGRES_PASSWORD=password
+        volumes:
+            - /etc/localtime:/etc/localtime
+            - /nas/docker/postgres/hass:/var/lib/postgresql/data

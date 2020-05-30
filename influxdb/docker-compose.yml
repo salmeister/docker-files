@@ -1,0 +1,16 @@
+version: '3.2'
+
+services:
+  db:
+    container_name: influxdb
+    image: influxdb:latest
+    restart: unless-stopped
+    network_mode: bridge
+    environment:
+      - INFLUXDB_REPORTING_DISABLED=false
+      - INFLUXDB_ADMIN_USER=admin
+      - INFLUXDB_ADMIN_PASSWORD=password
+    volumes:
+      - /nas/docker/influxdb/data:/var/lib/influxdb
+    ports:
+     - "8086:8086"
