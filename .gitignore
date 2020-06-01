@@ -10,8 +10,6 @@ backups
 logs
 *provisioning
 dav
+*.txt
 
 hass
-letsencrypt
-mqtt
-plex

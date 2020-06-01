@@ -1,0 +1,30 @@
+version: "3.1"
+services:
+  plex:
+    container_name: plex
+    image: plexinc/pms-docker:latest
+    container_name: plex
+    network_mode: host
+    devices:
+      - /dev/dvb:/dev/dvb
+    environment:
+      - TZ=America/Chicago
+      - PLEX_UID=1001
+      - PLEX_GID=1002
+      - PLEX_CLAIM= /run/secrets/plex_claim
+    secrets:
+      - plex_claim
+    volumes:
+      - /nas/docker/plex/config:/config
+      - /nas/temp/plex/transcode:/transcode
+      - /nas/tv_content/TV_Shows:/tv_shows
+      - /nas/tv_content/Movies:/movies
+      - /nas/tv_content/Videos:/videos
+      - /nas/home_content/Pictures:/pictures
+      - /nas/home_content/Music:/music
+      - /nas/tv_content/Workouts:/workouts
+      - /nas/tv_content/Recorded_TV:/recorded_tv
+    restart: unless-stopped
+secrets:
+  plex_claim:
+    file: plex_claim.txt
