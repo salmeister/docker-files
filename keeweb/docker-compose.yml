@@ -4,10 +4,9 @@ services:
   web:
     container_name: keeweb
     image: antelle/keeweb:latest
+    restart: unless-stopped
     ports:
       - '8987:80'
       - '4987:443'
 #    volumes:
 #      - /nas/docker/keeweb/data:/etc/nginx/external
-    extra_hosts:
-      - "keeweb.local:192.168.1.3"

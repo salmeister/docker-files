@@ -3,6 +3,7 @@ services:
     tf:
       container_name: tensorflow
       image: tensorflow/tensorflow
+      restart: unless-stopped
       network_mode: host
       volumes:
         - /nas/docker/tensorflow/data:/notebooks      

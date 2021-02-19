@@ -1,0 +1,17 @@
+
+version: '3.1'
+
+services:
+  mosquitto:
+    container_name: mosquitto
+    image:  eclipse-mosquitto:latest
+    ports:
+      - 1883:1883
+      - 9001:9001
+    environment:
+      - TZ=America/Chicago
+    volumes:
+      - /nas/docker/mosquitto/data:/mosquitto/data
+      - /nas/docker/mosquitto/config:/mosquitto/config
+      - /nas/docker/mosquitto/log:/mosquitto/log
+    restart: unless-stopped

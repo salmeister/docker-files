@@ -19,7 +19,7 @@ services:
       - /nas/temp/plex/transcode:/transcode
       - /nas/tv_content/TV_Shows:/tv_shows
       - /nas/tv_content/Movies:/movies
-      - /nas/tv_content/Videos:/videos
+      - /nas/home_content/Videos:/videos
       - /nas/home_content/Pictures:/pictures
       - /nas/home_content/Music:/music
       - /nas/tv_content/Workouts:/workouts

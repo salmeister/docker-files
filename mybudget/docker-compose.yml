@@ -7,7 +7,7 @@ services:
     restart: unless-stopped
     environment:
       ACCEPT_EULA: Y
-      SA_PASSWORD: password
+      SA_PASSWORD: Password
     ports:
       - "1433:1433"
     volumes:
@@ -17,7 +17,7 @@ services:
 
   mybudget-webui:
     container_name: mybudget-webui
-    image: salasrock:5000/mybudget:latest
+    image: salasrock:5000/mybudget-webui:latest
     restart: unless-stopped
     ports:
       - "8089:80"

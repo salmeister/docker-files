@@ -12,12 +12,13 @@ services:
     environment:
     - PGID=1002
     - PUID=1000
-    - EMAIL=/run/secrets/email
-    - URL=/run/secrets/duckdns_url
+    - FILE__EMAIL=/run/secrets/email
+    - FILE__URL=/run/secrets/duckdns_url
     - SUBDOMAINS=wildcard
     - VALIDATION=duckdns
     - TZ=America/Chicago
-    - DUCKDNSTOKEN=/run/secrets/duckdns_token
+    - DUCKDNSTOKEN=xxxxxxxxxxxxxxxxxxx
+#    - STAGING=true
     ports:
     - "80:80"
     - "443:443"
