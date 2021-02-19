@@ -8,6 +8,7 @@ conf
 work
 backups
 logs
+log
 *provisioning
 dav
 *.txt
