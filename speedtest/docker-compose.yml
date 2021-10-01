@@ -1,0 +1,9 @@
+version: "3"
+
+services:
+    speedtest:
+        container_name: speedtest
+        image: adolfintel/speedtest
+        restart: always
+        ports:
+            - 8085:80

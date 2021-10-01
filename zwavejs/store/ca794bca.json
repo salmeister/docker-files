@@ -8,22 +8,16 @@
                 "generic": 2,
                 "specific": 1
             },
-            "neighbors": [
-                16,
-                20,
-                31,
-                32,
-                36,
-                39,
-                6
-            ],
             "isListening": true,
             "isFrequentListening": false,
             "isRouting": false,
-            "maxBaudRate": 40000,
-            "isSecure": false,
-            "isBeaming": true,
-            "version": 4,
+            "supportedDataRates": [
+                40000
+            ],
+            "protocolVersion": 3,
+            "securityClasses": {
+                "S0_Legacy": false
+            },
             "commandClasses": {
                 "0x20": {
                     "name": "Basic",
@@ -46,25 +40,16 @@
                 "generic": 16,
                 "specific": 1
             },
-            "neighbors": [
-                1,
-                16,
-                20,
-                26,
-                31,
-                36,
-                37,
-                38,
-                39,
-                40
-            ],
             "isListening": true,
             "isFrequentListening": false,
             "isRouting": true,
-            "maxBaudRate": 40000,
-            "isSecure": false,
-            "isBeaming": true,
-            "version": 4,
+            "supportedDataRates": [
+                40000
+            ],
+            "protocolVersion": 3,
+            "securityClasses": {
+                "S0_Legacy": false
+            },
             "commandClasses": {
                 "0x25": {
                     "name": "Binary Switch",
@@ -73,7 +58,7 @@
                             "isSupported": true,
                             "isControlled": false,
                             "secure": false,
-                            "version": 1
+                            "version": 0
                         }
                     }
                 },
@@ -95,7 +80,7 @@
                             "isSupported": true,
                             "isControlled": false,
                             "secure": false,
-                            "version": 1
+                            "version": 0
                         }
                     }
                 },
@@ -106,7 +91,7 @@
                             "isSupported": true,
                             "isControlled": false,
                             "secure": false,
-                            "version": 1
+                            "version": 0
                         }
                     }
                 },
@@ -139,7 +124,7 @@
                             "isSupported": true,
                             "isControlled": false,
                             "secure": false,
-                            "version": 1
+                            "version": 0
                         }
                     }
                 }
@@ -153,22 +138,16 @@
                 "generic": 16,
                 "specific": 3
             },
-            "neighbors": [
-                16,
-                20,
-                26,
-                31,
-                32,
-                36,
-                37
-            ],
             "isListening": true,
             "isFrequentListening": false,
             "isRouting": true,
-            "maxBaudRate": 40000,
-            "isSecure": false,
-            "isBeaming": true,
-            "version": 4,
+            "supportedDataRates": [
+                40000
+            ],
+            "protocolVersion": 3,
+            "securityClasses": {
+                "S0_Legacy": false
+            },
             "commandClasses": {
                 "0x25": {
                     "name": "Binary Switch",
@@ -177,7 +156,7 @@
                             "isSupported": true,
                             "isControlled": false,
                             "secure": false,
-                            "version": 1
+                            "version": 0
                         }
                     }
                 },
@@ -221,7 +200,7 @@
                             "isSupported": true,
                             "isControlled": false,
                             "secure": false,
-                            "version": 1
+                            "version": 0
                         }
                     }
                 },
@@ -232,7 +211,7 @@
                             "isSupported": true,
                             "isControlled": false,
                             "secure": false,
-                            "version": 1
+                            "version": 0
                         }
                     }
                 },
@@ -254,7 +233,7 @@
                             "isSupported": true,
                             "isControlled": false,
                             "secure": false,
-                            "version": 1
+                            "version": 0
                         }
                     }
                 }
@@ -268,20 +247,16 @@
                 "generic": 16,
                 "specific": 1
             },
-            "neighbors": [
-                16,
-                20,
-                26,
-                32,
-                36
-            ],
             "isListening": true,
             "isFrequentListening": false,
             "isRouting": true,
-            "maxBaudRate": 40000,
-            "isSecure": false,
-            "isBeaming": true,
-            "version": 4,
+            "supportedDataRates": [
+                40000
+            ],
+            "protocolVersion": 3,
+            "securityClasses": {
+                "S0_Legacy": false
+            },
             "commandClasses": {
                 "0x25": {
                     "name": "Binary Switch",
@@ -290,7 +265,7 @@
                             "isSupported": true,
                             "isControlled": false,
                             "secure": false,
-                            "version": 1
+                            "version": 0
                         }
                     }
                 },
@@ -345,7 +320,7 @@
                             "isSupported": true,
                             "isControlled": false,
                             "secure": false,
-                            "version": 1
+                            "version": 0
                         }
                     }
                 },
@@ -367,7 +342,7 @@
                             "isSupported": true,
                             "isControlled": false,
                             "secure": false,
-                            "version": 2
+                            "version": 0
                         }
                     }
                 },
@@ -378,7 +353,7 @@
                             "isSupported": true,
                             "isControlled": false,
                             "secure": false,
-                            "version": 2
+                            "version": 0
                         }
                     }
                 },
@@ -400,7 +375,7 @@
                             "isSupported": true,
                             "isControlled": false,
                             "secure": false,
-                            "version": 2
+                            "version": 0
                         }
                     }
                 },
@@ -411,7 +386,7 @@
                             "isSupported": true,
                             "isControlled": false,
                             "secure": false,
-                            "version": 2
+                            "version": 0
                         }
                     }
                 },
@@ -422,7 +397,7 @@
                             "isSupported": true,
                             "isControlled": false,
                             "secure": false,
-                            "version": 2
+                            "version": 0
                         }
                     }
                 }
@@ -436,28 +411,16 @@
                 "generic": 16,
                 "specific": 1
             },
-            "neighbors": [
-                1,
-                10,
-                14,
-                20,
-                26,
-                31,
-                32,
-                36,
-                37,
-                38,
-                39,
-                40,
-                6
-            ],
             "isListening": true,
             "isFrequentListening": false,
             "isRouting": true,
-            "maxBaudRate": 40000,
-            "isSecure": false,
-            "isBeaming": true,
-            "version": 4,
+            "supportedDataRates": [
+                40000
+            ],
+            "protocolVersion": 3,
+            "securityClasses": {
+                "S0_Legacy": false
+            },
             "commandClasses": {
                 "0x25": {
                     "name": "Binary Switch",
@@ -466,7 +429,7 @@
                             "isSupported": true,
                             "isControlled": false,
                             "secure": false,
-                            "version": 1
+                            "version": 0
                         }
                     }
                 },
@@ -488,7 +451,7 @@
                             "isSupported": true,
                             "isControlled": false,
                             "secure": false,
-                            "version": 1
+                            "version": 0
                         }
                     }
                 },
@@ -499,7 +462,7 @@
                             "isSupported": true,
                             "isControlled": false,
                             "secure": false,
-                            "version": 1
+                            "version": 0
                         }
                     }
                 },
@@ -510,7 +473,7 @@
                             "isSupported": true,
                             "isControlled": false,
                             "secure": false,
-                            "version": 2
+                            "version": 0
                         }
                     }
                 },
@@ -521,7 +484,7 @@
                             "isSupported": true,
                             "isControlled": false,
                             "secure": false,
-                            "version": 1
+                            "version": 0
                         }
                     }
                 }
@@ -535,27 +498,16 @@
                 "generic": 16,
                 "specific": 3
             },
-            "neighbors": [
-                1,
-                10,
-                14,
-                16,
-                26,
-                31,
-                32,
-                36,
-                38,
-                39,
-                40,
-                6
-            ],
             "isListening": true,
             "isFrequentListening": false,
             "isRouting": true,
-            "maxBaudRate": 40000,
-            "isSecure": false,
-            "isBeaming": true,
-            "version": 4,
+            "supportedDataRates": [
+                40000
+            ],
+            "protocolVersion": 3,
+            "securityClasses": {
+                "S0_Legacy": false
+            },
             "commandClasses": {
                 "0x25": {
                     "name": "Binary Switch",
@@ -564,7 +516,7 @@
                             "isSupported": true,
                             "isControlled": false,
                             "secure": false,
-                            "version": 1
+                            "version": 0
                         }
                     }
                 },
@@ -608,7 +560,7 @@
                             "isSupported": true,
                             "isControlled": false,
                             "secure": false,
-                            "version": 1
+                            "version": 0
                         }
                     }
                 },
@@ -619,7 +571,7 @@
                             "isSupported": true,
                             "isControlled": false,
                             "secure": false,
-                            "version": 1
+                            "version": 0
                         }
                     }
                 },
@@ -641,7 +593,7 @@
                             "isSupported": true,
                             "isControlled": false,
                             "secure": false,
-                            "version": 1
+                            "version": 0
                         }
                     }
                 }
@@ -655,27 +607,16 @@
                 "generic": 16,
                 "specific": 1
             },
-            "neighbors": [
-                10,
-                14,
-                16,
-                20,
-                31,
-                32,
-                36,
-                37,
-                38,
-                39,
-                40,
-                6
-            ],
             "isListening": true,
             "isFrequentListening": false,
             "isRouting": true,
-            "maxBaudRate": 40000,
-            "isSecure": false,
-            "isBeaming": true,
-            "version": 4,
+            "supportedDataRates": [
+                40000
+            ],
+            "protocolVersion": 3,
+            "securityClasses": {
+                "S0_Legacy": false
+            },
             "commandClasses": {
                 "0x25": {
                     "name": "Binary Switch",
@@ -684,7 +625,7 @@
                             "isSupported": true,
                             "isControlled": false,
                             "secure": false,
-                            "version": 1
+                            "version": 0
                         }
                     }
                 },
@@ -706,7 +647,7 @@
                             "isSupported": true,
                             "isControlled": false,
                             "secure": false,
-                            "version": 1
+                            "version": 0
                         }
                     }
                 },
@@ -717,7 +658,7 @@
                             "isSupported": true,
                             "isControlled": false,
                             "secure": false,
-                            "version": 1
+                            "version": 0
                         }
                     }
                 },
@@ -750,7 +691,7 @@
                             "isSupported": true,
                             "isControlled": false,
                             "secure": false,
-                            "version": 1
+                            "version": 0
                         }
                     }
                 }
@@ -764,26 +705,16 @@
                 "generic": 17,
                 "specific": 1
             },
-            "neighbors": [
-                1,
-                10,
-                16,
-                20,
-                26,
-                32,
-                36,
-                37,
-                38,
-                39,
-                6
-            ],
             "isListening": true,
             "isFrequentListening": false,
             "isRouting": true,
-            "maxBaudRate": 40000,
-            "isSecure": false,
-            "isBeaming": true,
-            "version": 4,
+            "supportedDataRates": [
+                40000
+            ],
+            "protocolVersion": 3,
+            "securityClasses": {
+                "S0_Legacy": false
+            },
             "commandClasses": {
                 "0x26": {
                     "name": "Multilevel Switch",
@@ -792,7 +723,7 @@
                             "isSupported": true,
                             "isControlled": false,
                             "secure": false,
-                            "version": 2
+                            "version": 0
                         }
                     }
                 },
@@ -847,6 +778,425 @@
                             "isSupported": true,
                             "isControlled": false,
                             "secure": false,
+                            "version": 0
+                        }
+                    }
+                },
+                "0x5a": {
+                    "name": "Device Reset Locally",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 0
+                        }
+                    }
+                },
+                "0x5e": {
+                    "name": "Z-Wave Plus Info",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 0
+                        }
+                    }
+                },
+                "0x70": {
+                    "name": "Configuration",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 0
+                        }
+                    }
+                },
+                "0x72": {
+                    "name": "Manufacturer Specific",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 0
+                        }
+                    }
+                },
+                "0x73": {
+                    "name": "Powerlevel",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 0
+                        }
+                    }
+                },
+                "0x7a": {
+                    "name": "Firmware Update Meta Data",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 0
+                        }
+                    }
+                },
+                "0x85": {
+                    "name": "Association",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 0
+                        }
+                    }
+                },
+                "0x86": {
+                    "name": "Version",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 0
+                        }
+                    }
+                }
+            }
+        },
+        "36": {
+            "id": 36,
+            "interviewStage": "Complete",
+            "deviceClass": {
+                "basic": 4,
+                "generic": 16,
+                "specific": 1
+            },
+            "isListening": true,
+            "isFrequentListening": false,
+            "isRouting": true,
+            "supportedDataRates": [
+                40000
+            ],
+            "protocolVersion": 3,
+            "securityClasses": {
+                "S0_Legacy": false
+            },
+            "commandClasses": {
+                "0x25": {
+                    "name": "Binary Switch",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 0
+                        }
+                    }
+                },
+                "0x27": {
+                    "name": "All Switch",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 0
+                        }
+                    }
+                },
+                "0x70": {
+                    "name": "Configuration",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 0
+                        }
+                    }
+                },
+                "0x72": {
+                    "name": "Manufacturer Specific",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 0
+                        }
+                    }
+                },
+                "0x73": {
+                    "name": "Powerlevel",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 0
+                        }
+                    }
+                },
+                "0x77": {
+                    "name": "Node Naming and Location",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 0
+                        }
+                    }
+                },
+                "0x86": {
+                    "name": "Version",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 0
+                        }
+                    }
+                }
+            }
+        },
+        "39": {
+            "id": 39,
+            "interviewStage": "Complete",
+            "deviceClass": {
+                "basic": 4,
+                "generic": 7,
+                "specific": 1
+            },
+            "isListening": false,
+            "isFrequentListening": false,
+            "isRouting": true,
+            "supportedDataRates": [
+                40000
+            ],
+            "protocolVersion": 3,
+            "securityClasses": {
+                "S0_Legacy": false
+            },
+            "commandClasses": {
+                "0x31": {
+                    "name": "Multilevel Sensor",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 0
+                        }
+                    }
+                },
+                "0x59": {
+                    "name": "Association Group Information",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 0
+                        }
+                    }
+                },
+                "0x5a": {
+                    "name": "Device Reset Locally",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 0
+                        }
+                    }
+                },
+                "0x5e": {
+                    "name": "Z-Wave Plus Info",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 0
+                        }
+                    }
+                },
+                "0x70": {
+                    "name": "Configuration",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 0
+                        }
+                    }
+                },
+                "0x71": {
+                    "name": "Notification",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 0
+                        }
+                    }
+                },
+                "0x72": {
+                    "name": "Manufacturer Specific",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 0
+                        }
+                    }
+                },
+                "0x73": {
+                    "name": "Powerlevel",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 0
+                        }
+                    }
+                },
+                "0x7a": {
+                    "name": "Firmware Update Meta Data",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 0
+                        }
+                    }
+                },
+                "0x80": {
+                    "name": "Battery",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 0
+                        }
+                    }
+                },
+                "0x84": {
+                    "name": "Wake Up",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 1
+                        }
+                    }
+                },
+                "0x85": {
+                    "name": "Association",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 0
+                        }
+                    }
+                },
+                "0x86": {
+                    "name": "Version",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 0
+                        }
+                    }
+                }
+            }
+        },
+        "47": {
+            "id": 47,
+            "interviewStage": "Complete",
+            "deviceClass": {
+                "basic": 4,
+                "generic": 32,
+                "specific": 1
+            },
+            "isListening": false,
+            "isFrequentListening": false,
+            "isRouting": true,
+            "supportedDataRates": [
+                40000,
+                100000
+            ],
+            "protocolVersion": 3,
+            "nodeType": "Routing End Node",
+            "supportsSecurity": false,
+            "supportsBeaming": true,
+            "securityClasses": {
+                "S0_Legacy": false
+            },
+            "commandClasses": {
+                "0x30": {
+                    "name": "Binary Sensor",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 2
+                        }
+                    }
+                },
+                "0x31": {
+                    "name": "Multilevel Sensor",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 5
+                        }
+                    }
+                },
+                "0x55": {
+                    "name": "Transport Service",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 2
+                        }
+                    }
+                },
+                "0x59": {
+                    "name": "Association Group Information",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
                             "version": 1
                         }
                     }
@@ -873,6 +1223,17 @@
                         }
                     }
                 },
+                "0x6c": {
+                    "name": "Supervision",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 0
+                        }
+                    }
+                },
                 "0x70": {
                     "name": "Configuration",
                     "endpoints": {
@@ -881,6 +1242,17 @@
                             "isControlled": false,
                             "secure": false,
                             "version": 1
+                        }
+                    }
+                },
+                "0x71": {
+                    "name": "Notification",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 5
                         }
                     }
                 },
@@ -913,6 +1285,28 @@
                             "isSupported": true,
                             "isControlled": false,
                             "secure": false,
+                            "version": 3
+                        }
+                    }
+                },
+                "0x80": {
+                    "name": "Battery",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 1
+                        }
+                    }
+                },
+                "0x84": {
+                    "name": "Wake Up",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
                             "version": 2
                         }
                     }
@@ -938,34 +1332,454 @@
                             "version": 2
                         }
                     }
+                },
+                "0x9f": {
+                    "name": "Security 2",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": true,
+                            "version": 0
+                        }
+                    }
                 }
             }
         },
-        "32": {
-            "id": 32,
+        "48": {
+            "id": 48,
+            "interviewStage": "Complete",
+            "deviceClass": {
+                "basic": 4,
+                "generic": 32,
+                "specific": 1
+            },
+            "isListening": false,
+            "isFrequentListening": false,
+            "isRouting": true,
+            "supportedDataRates": [
+                40000
+            ],
+            "protocolVersion": 3,
+            "securityClasses": {
+                "S0_Legacy": false
+            },
+            "commandClasses": {
+                "0x30": {
+                    "name": "Binary Sensor",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 2
+                        }
+                    }
+                },
+                "0x31": {
+                    "name": "Multilevel Sensor",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 5
+                        }
+                    }
+                },
+                "0x55": {
+                    "name": "Transport Service",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 0
+                        }
+                    }
+                },
+                "0x59": {
+                    "name": "Association Group Information",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 1
+                        }
+                    }
+                },
+                "0x5a": {
+                    "name": "Device Reset Locally",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 0
+                        }
+                    }
+                },
+                "0x5e": {
+                    "name": "Z-Wave Plus Info",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 2
+                        }
+                    }
+                },
+                "0x6c": {
+                    "name": "Supervision",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 0
+                        }
+                    }
+                },
+                "0x70": {
+                    "name": "Configuration",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 1
+                        }
+                    }
+                },
+                "0x71": {
+                    "name": "Notification",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 5
+                        }
+                    }
+                },
+                "0x72": {
+                    "name": "Manufacturer Specific",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 2
+                        }
+                    }
+                },
+                "0x73": {
+                    "name": "Powerlevel",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 0
+                        }
+                    }
+                },
+                "0x7a": {
+                    "name": "Firmware Update Meta Data",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 3
+                        }
+                    }
+                },
+                "0x80": {
+                    "name": "Battery",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 1
+                        }
+                    }
+                },
+                "0x84": {
+                    "name": "Wake Up",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 1
+                        }
+                    }
+                },
+                "0x85": {
+                    "name": "Association",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 2
+                        }
+                    }
+                },
+                "0x86": {
+                    "name": "Version",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 2
+                        }
+                    }
+                },
+                "0x9f": {
+                    "name": "Security 2",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 0
+                        }
+                    }
+                }
+            }
+        },
+        "49": {
+            "id": 49,
+            "interviewStage": "Complete",
+            "deviceClass": {
+                "basic": 4,
+                "generic": 32,
+                "specific": 1
+            },
+            "isListening": false,
+            "isFrequentListening": false,
+            "isRouting": true,
+            "supportedDataRates": [
+                40000
+            ],
+            "protocolVersion": 3,
+            "securityClasses": {
+                "S0_Legacy": false
+            },
+            "commandClasses": {
+                "0x30": {
+                    "name": "Binary Sensor",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 2
+                        }
+                    }
+                },
+                "0x31": {
+                    "name": "Multilevel Sensor",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 5
+                        }
+                    }
+                },
+                "0x55": {
+                    "name": "Transport Service",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 0
+                        }
+                    }
+                },
+                "0x59": {
+                    "name": "Association Group Information",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 1
+                        }
+                    }
+                },
+                "0x5a": {
+                    "name": "Device Reset Locally",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 0
+                        }
+                    }
+                },
+                "0x5e": {
+                    "name": "Z-Wave Plus Info",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 2
+                        }
+                    }
+                },
+                "0x6c": {
+                    "name": "Supervision",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 0
+                        }
+                    }
+                },
+                "0x70": {
+                    "name": "Configuration",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 1
+                        }
+                    }
+                },
+                "0x71": {
+                    "name": "Notification",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 5
+                        }
+                    }
+                },
+                "0x72": {
+                    "name": "Manufacturer Specific",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 2
+                        }
+                    }
+                },
+                "0x73": {
+                    "name": "Powerlevel",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 0
+                        }
+                    }
+                },
+                "0x7a": {
+                    "name": "Firmware Update Meta Data",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 3
+                        }
+                    }
+                },
+                "0x80": {
+                    "name": "Battery",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 1
+                        }
+                    }
+                },
+                "0x84": {
+                    "name": "Wake Up",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 1
+                        }
+                    }
+                },
+                "0x85": {
+                    "name": "Association",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 2
+                        }
+                    }
+                },
+                "0x86": {
+                    "name": "Version",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 2
+                        }
+                    }
+                },
+                "0x9f": {
+                    "name": "Security 2",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 0
+                        }
+                    }
+                }
+            }
+        },
+        "50": {
+            "id": 50,
             "interviewStage": "Complete",
             "deviceClass": {
                 "basic": 4,
                 "generic": 64,
                 "specific": 3
             },
-            "neighbors": [
-                1,
-                10,
-                14,
-                16,
-                20,
-                26,
-                31,
-                36
-            ],
             "isListening": false,
-            "isFrequentListening": true,
+            "isFrequentListening": "1000ms",
             "isRouting": true,
-            "maxBaudRate": 40000,
-            "isSecure": true,
-            "isBeaming": true,
-            "version": 4,
+            "supportedDataRates": [
+                40000
+            ],
+            "protocolVersion": 3,
+            "securityClasses": {
+                "S0_Legacy": true
+            },
             "commandClasses": {
                 "0x4c": {
                     "name": "Door Lock Logging",
@@ -1007,7 +1821,7 @@
                             "isSupported": true,
                             "isControlled": false,
                             "secure": true,
-                            "version": 0
+                            "version": 1
                         }
                     }
                 },
@@ -1040,7 +1854,7 @@
                             "isSupported": true,
                             "isControlled": false,
                             "secure": true,
-                            "version": 0
+                            "version": 1
                         }
                     }
                 },
@@ -1051,7 +1865,7 @@
                             "isSupported": true,
                             "isControlled": false,
                             "secure": true,
-                            "version": 2
+                            "version": 0
                         }
                     }
                 },
@@ -1062,7 +1876,7 @@
                             "isSupported": true,
                             "isControlled": false,
                             "secure": true,
-                            "version": 1
+                            "version": 0
                         }
                     }
                 },
@@ -1123,35 +1937,28 @@
                 }
             }
         },
-        "36": {
-            "id": 36,
+        "51": {
+            "id": 51,
             "interviewStage": "Complete",
             "deviceClass": {
                 "basic": 4,
                 "generic": 16,
                 "specific": 1
             },
-            "neighbors": [
-                1,
-                10,
-                14,
-                16,
-                20,
-                26,
-                31,
-                32,
-                37,
-                38,
-                39,
-                6
-            ],
             "isListening": true,
             "isFrequentListening": false,
             "isRouting": true,
-            "maxBaudRate": 40000,
-            "isSecure": false,
-            "isBeaming": true,
-            "version": 4,
+            "supportedDataRates": [
+                40000,
+                100000
+            ],
+            "protocolVersion": 3,
+            "nodeType": "Routing End Node",
+            "supportsSecurity": false,
+            "supportsBeaming": true,
+            "securityClasses": {
+                "S0_Legacy": false
+            },
             "commandClasses": {
                 "0x25": {
                     "name": "Binary Switch",
@@ -1160,7 +1967,7 @@
                             "isSupported": true,
                             "isControlled": false,
                             "secure": false,
-                            "version": 0
+                            "version": 2
                         }
                     }
                 },
@@ -1175,109 +1982,6 @@
                         }
                     }
                 },
-                "0x70": {
-                    "name": "Configuration",
-                    "endpoints": {
-                        "0": {
-                            "isSupported": true,
-                            "isControlled": false,
-                            "secure": false,
-                            "version": 0
-                        }
-                    }
-                },
-                "0x72": {
-                    "name": "Manufacturer Specific",
-                    "endpoints": {
-                        "0": {
-                            "isSupported": true,
-                            "isControlled": false,
-                            "secure": false,
-                            "version": 0
-                        }
-                    }
-                },
-                "0x73": {
-                    "name": "Powerlevel",
-                    "endpoints": {
-                        "0": {
-                            "isSupported": true,
-                            "isControlled": false,
-                            "secure": false,
-                            "version": 0
-                        }
-                    }
-                },
-                "0x77": {
-                    "name": "Node Naming and Location",
-                    "endpoints": {
-                        "0": {
-                            "isSupported": true,
-                            "isControlled": false,
-                            "secure": false,
-                            "version": 0
-                        }
-                    }
-                },
-                "0x86": {
-                    "name": "Version",
-                    "endpoints": {
-                        "0": {
-                            "isSupported": true,
-                            "isControlled": false,
-                            "secure": false,
-                            "version": 0
-                        }
-                    }
-                }
-            }
-        },
-        "37": {
-            "id": 37,
-            "interviewStage": "Complete",
-            "deviceClass": {
-                "basic": 4,
-                "generic": 32,
-                "specific": 1
-            },
-            "neighbors": [
-                10,
-                16,
-                26,
-                31,
-                36,
-                6
-            ],
-            "isListening": false,
-            "isFrequentListening": false,
-            "isRouting": true,
-            "maxBaudRate": 40000,
-            "isSecure": false,
-            "isBeaming": true,
-            "version": 4,
-            "commandClasses": {
-                "0x30": {
-                    "name": "Binary Sensor",
-                    "endpoints": {
-                        "0": {
-                            "isSupported": true,
-                            "isControlled": false,
-                            "secure": false,
-                            "version": 2
-                        }
-                    }
-                },
-                "0x31": {
-                    "name": "Multilevel Sensor",
-                    "endpoints": {
-                        "0": {
-                            "isSupported": true,
-                            "isControlled": false,
-                            "secure": false,
-                            "version": 5
-                        }
-                    }
-                },
                 "0x55": {
                     "name": "Transport Service",
                     "endpoints": {
@@ -1285,7 +1989,7 @@
                             "isSupported": true,
                             "isControlled": false,
                             "secure": false,
-                            "version": 0
+                            "version": 2
                         }
                     }
                 },
@@ -1296,7 +2000,7 @@
                             "isSupported": true,
                             "isControlled": false,
                             "secure": false,
-                            "version": 1
+                            "version": 3
                         }
                     }
                 },
@@ -1308,6 +2012,17 @@
                             "isControlled": false,
                             "secure": false,
                             "version": 0
+                        }
+                    }
+                },
+                "0x5b": {
+                    "name": "Central Scene",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 3
                         }
                     }
                 },
@@ -1340,18 +2055,7 @@
                             "isSupported": true,
                             "isControlled": false,
                             "secure": false,
-                            "version": 1
-                        }
-                    }
-                },
-                "0x71": {
-                    "name": "Notification",
-                    "endpoints": {
-                        "0": {
-                            "isSupported": true,
-                            "isControlled": false,
-                            "secure": false,
-                            "version": 5
+                            "version": 4
                         }
                     }
                 },
@@ -1384,12 +2088,232 @@
                             "isSupported": true,
                             "isControlled": false,
                             "secure": false,
+                            "version": 5
+                        }
+                    }
+                },
+                "0x85": {
+                    "name": "Association",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
                             "version": 3
                         }
                     }
                 },
-                "0x80": {
-                    "name": "Battery",
+                "0x86": {
+                    "name": "Version",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 3
+                        }
+                    }
+                },
+                "0x87": {
+                    "name": "Indicator",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 3
+                        }
+                    }
+                },
+                "0x8e": {
+                    "name": "Multi Channel Association",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 4
+                        }
+                    }
+                },
+                "0x9f": {
+                    "name": "Security 2",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": true,
+                            "version": 0
+                        }
+                    }
+                }
+            }
+        },
+        "52": {
+            "id": 52,
+            "interviewStage": "Complete",
+            "deviceClass": {
+                "basic": 4,
+                "generic": 17,
+                "specific": 1
+            },
+            "isListening": true,
+            "isFrequentListening": false,
+            "isRouting": true,
+            "supportedDataRates": [
+                40000,
+                100000
+            ],
+            "protocolVersion": 3,
+            "nodeType": "Routing End Node",
+            "supportsSecurity": false,
+            "supportsBeaming": true,
+            "securityClasses": {
+                "S0_Legacy": false
+            },
+            "commandClasses": {
+                "0x25": {
+                    "name": "Binary Switch",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 1
+                        },
+                        "1": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 0
+                        }
+                    }
+                },
+                "0x26": {
+                    "name": "Multilevel Switch",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 4
+                        }
+                    }
+                },
+                "0x27": {
+                    "name": "All Switch",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 0
+                        },
+                        "1": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 0
+                        }
+                    }
+                },
+                "0x55": {
+                    "name": "Transport Service",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 2
+                        }
+                    }
+                },
+                "0x59": {
+                    "name": "Association Group Information",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 1
+                        },
+                        "1": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 0
+                        }
+                    }
+                },
+                "0x5a": {
+                    "name": "Device Reset Locally",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 0
+                        }
+                    }
+                },
+                "0x5b": {
+                    "name": "Central Scene",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 3
+                        }
+                    }
+                },
+                "0x5e": {
+                    "name": "Z-Wave Plus Info",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 2
+                        },
+                        "1": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 0
+                        }
+                    }
+                },
+                "0x60": {
+                    "name": "Multi Channel",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 4
+                        }
+                    }
+                },
+                "0x6c": {
+                    "name": "Supervision",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 0
+                        },
+                        "1": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 0
+                        }
+                    }
+                },
+                "0x70": {
+                    "name": "Configuration",
                     "endpoints": {
                         "0": {
                             "isSupported": true,
@@ -1399,14 +2323,36 @@
                         }
                     }
                 },
-                "0x84": {
-                    "name": "Wake Up",
+                "0x72": {
+                    "name": "Manufacturer Specific",
                     "endpoints": {
                         "0": {
                             "isSupported": true,
                             "isControlled": false,
                             "secure": false,
                             "version": 2
+                        }
+                    }
+                },
+                "0x73": {
+                    "name": "Powerlevel",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 0
+                        }
+                    }
+                },
+                "0x7a": {
+                    "name": "Firmware Update Meta Data",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 4
                         }
                     }
                 },
@@ -1418,6 +2364,12 @@
                             "isControlled": false,
                             "secure": false,
                             "version": 2
+                        },
+                        "1": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 0
                         }
                     }
                 },
@@ -1428,7 +2380,24 @@
                             "isSupported": true,
                             "isControlled": false,
                             "secure": false,
-                            "version": 2
+                            "version": 3
+                        }
+                    }
+                },
+                "0x8e": {
+                    "name": "Multi Channel Association",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 3
+                        },
+                        "1": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 0
                         }
                     }
                 },
@@ -1438,39 +2407,44 @@
                         "0": {
                             "isSupported": true,
                             "isControlled": false,
-                            "secure": false,
+                            "secure": true,
+                            "version": 0
+                        },
+                        "1": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": true,
                             "version": 0
                         }
                     }
                 }
             }
         },
-        "38": {
-            "id": 38,
+        "53": {
+            "id": 53,
             "interviewStage": "Complete",
             "deviceClass": {
                 "basic": 4,
-                "generic": 32,
+                "generic": 16,
                 "specific": 1
             },
-            "neighbors": [
-                16,
-                20,
-                26,
-                31,
-                36,
-                6
-            ],
-            "isListening": false,
+            "isListening": true,
             "isFrequentListening": false,
             "isRouting": true,
-            "maxBaudRate": 40000,
-            "isSecure": false,
-            "isBeaming": true,
-            "version": 4,
+            "supportedDataRates": [
+                40000,
+                100000
+            ],
+            "protocolVersion": 3,
+            "nodeType": "Routing End Node",
+            "supportsSecurity": false,
+            "supportsBeaming": true,
+            "securityClasses": {
+                "S0_Legacy": false
+            },
             "commandClasses": {
-                "0x30": {
-                    "name": "Binary Sensor",
+                "0x25": {
+                    "name": "Binary Switch",
                     "endpoints": {
                         "0": {
                             "isSupported": true,
@@ -1480,14 +2454,14 @@
                         }
                     }
                 },
-                "0x31": {
-                    "name": "Multilevel Sensor",
+                "0x27": {
+                    "name": "All Switch",
                     "endpoints": {
                         "0": {
                             "isSupported": true,
                             "isControlled": false,
                             "secure": false,
-                            "version": 5
+                            "version": 0
                         }
                     }
                 },
@@ -1509,7 +2483,7 @@
                             "isSupported": true,
                             "isControlled": false,
                             "secure": false,
-                            "version": 1
+                            "version": 0
                         }
                     }
                 },
@@ -1521,6 +2495,17 @@
                             "isControlled": false,
                             "secure": false,
                             "version": 0
+                        }
+                    }
+                },
+                "0x5b": {
+                    "name": "Central Scene",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 3
                         }
                     }
                 },
@@ -1553,18 +2538,7 @@
                             "isSupported": true,
                             "isControlled": false,
                             "secure": false,
-                            "version": 1
-                        }
-                    }
-                },
-                "0x71": {
-                    "name": "Notification",
-                    "endpoints": {
-                        "0": {
-                            "isSupported": true,
-                            "isControlled": false,
-                            "secure": false,
-                            "version": 5
+                            "version": 4
                         }
                     }
                 },
@@ -1575,7 +2549,7 @@
                             "isSupported": true,
                             "isControlled": false,
                             "secure": false,
-                            "version": 2
+                            "version": 0
                         }
                     }
                 },
@@ -1592,6 +2566,28 @@
                 },
                 "0x7a": {
                     "name": "Firmware Update Meta Data",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 0
+                        }
+                    }
+                },
+                "0x85": {
+                    "name": "Association",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 0
+                        }
+                    }
+                },
+                "0x86": {
+                    "name": "Version",
                     "endpoints": {
                         "0": {
                             "isSupported": true,
@@ -1601,47 +2597,25 @@
                         }
                     }
                 },
-                "0x80": {
-                    "name": "Battery",
+                "0x87": {
+                    "name": "Indicator",
                     "endpoints": {
                         "0": {
                             "isSupported": true,
                             "isControlled": false,
                             "secure": false,
-                            "version": 1
+                            "version": 0
                         }
                     }
                 },
-                "0x84": {
-                    "name": "Wake Up",
+                "0x8e": {
+                    "name": "Multi Channel Association",
                     "endpoints": {
                         "0": {
                             "isSupported": true,
                             "isControlled": false,
                             "secure": false,
-                            "version": 2
-                        }
-                    }
-                },
-                "0x85": {
-                    "name": "Association",
-                    "endpoints": {
-                        "0": {
-                            "isSupported": true,
-                            "isControlled": false,
-                            "secure": false,
-                            "version": 2
-                        }
-                    }
-                },
-                "0x86": {
-                    "name": "Version",
-                    "endpoints": {
-                        "0": {
-                            "isSupported": true,
-                            "isControlled": false,
-                            "secure": false,
-                            "version": 2
+                            "version": 0
                         }
                     }
                 },
@@ -1651,224 +2625,55 @@
                         "0": {
                             "isSupported": true,
                             "isControlled": false,
-                            "secure": false,
+                            "secure": true,
                             "version": 0
                         }
                     }
                 }
             }
         },
-        "39": {
-            "id": 39,
+        "54": {
+            "id": 54,
             "interviewStage": "Complete",
             "deviceClass": {
                 "basic": 4,
-                "generic": 7,
+                "generic": 16,
                 "specific": 1
             },
-            "neighbors": [
-                1,
-                16,
-                20,
-                26,
-                31,
-                36,
-                6
-            ],
-            "isListening": false,
+            "isListening": true,
             "isFrequentListening": false,
             "isRouting": true,
-            "maxBaudRate": 40000,
-            "isSecure": false,
-            "isBeaming": true,
-            "version": 4,
+            "supportedDataRates": [
+                40000,
+                100000
+            ],
+            "protocolVersion": 3,
+            "nodeType": "Routing End Node",
+            "supportsSecurity": false,
+            "supportsBeaming": true,
+            "securityClasses": {
+                "S0_Legacy": false
+            },
             "commandClasses": {
-                "0x31": {
-                    "name": "Multilevel Sensor",
+                "0x25": {
+                    "name": "Binary Switch",
                     "endpoints": {
                         "0": {
                             "isSupported": true,
                             "isControlled": false,
                             "secure": false,
-                            "version": 7
+                            "version": 2
                         }
                     }
                 },
-                "0x59": {
-                    "name": "Association Group Information",
-                    "endpoints": {
-                        "0": {
-                            "isSupported": true,
-                            "isControlled": false,
-                            "secure": false,
-                            "version": 1
-                        }
-                    }
-                },
-                "0x5a": {
-                    "name": "Device Reset Locally",
+                "0x27": {
+                    "name": "All Switch",
                     "endpoints": {
                         "0": {
                             "isSupported": true,
                             "isControlled": false,
                             "secure": false,
                             "version": 0
-                        }
-                    }
-                },
-                "0x5e": {
-                    "name": "Z-Wave Plus Info",
-                    "endpoints": {
-                        "0": {
-                            "isSupported": true,
-                            "isControlled": false,
-                            "secure": false,
-                            "version": 2
-                        }
-                    }
-                },
-                "0x70": {
-                    "name": "Configuration",
-                    "endpoints": {
-                        "0": {
-                            "isSupported": true,
-                            "isControlled": false,
-                            "secure": false,
-                            "version": 1
-                        }
-                    }
-                },
-                "0x71": {
-                    "name": "Notification",
-                    "endpoints": {
-                        "0": {
-                            "isSupported": true,
-                            "isControlled": false,
-                            "secure": false,
-                            "version": 5
-                        }
-                    }
-                },
-                "0x72": {
-                    "name": "Manufacturer Specific",
-                    "endpoints": {
-                        "0": {
-                            "isSupported": true,
-                            "isControlled": false,
-                            "secure": false,
-                            "version": 2
-                        }
-                    }
-                },
-                "0x73": {
-                    "name": "Powerlevel",
-                    "endpoints": {
-                        "0": {
-                            "isSupported": true,
-                            "isControlled": false,
-                            "secure": false,
-                            "version": 0
-                        }
-                    }
-                },
-                "0x7a": {
-                    "name": "Firmware Update Meta Data",
-                    "endpoints": {
-                        "0": {
-                            "isSupported": true,
-                            "isControlled": false,
-                            "secure": false,
-                            "version": 2
-                        }
-                    }
-                },
-                "0x80": {
-                    "name": "Battery",
-                    "endpoints": {
-                        "0": {
-                            "isSupported": true,
-                            "isControlled": false,
-                            "secure": false,
-                            "version": 1
-                        }
-                    }
-                },
-                "0x84": {
-                    "name": "Wake Up",
-                    "endpoints": {
-                        "0": {
-                            "isSupported": true,
-                            "isControlled": false,
-                            "secure": false,
-                            "version": 1
-                        }
-                    }
-                },
-                "0x85": {
-                    "name": "Association",
-                    "endpoints": {
-                        "0": {
-                            "isSupported": true,
-                            "isControlled": false,
-                            "secure": false,
-                            "version": 2
-                        }
-                    }
-                },
-                "0x86": {
-                    "name": "Version",
-                    "endpoints": {
-                        "0": {
-                            "isSupported": true,
-                            "isControlled": false,
-                            "secure": false,
-                            "version": 2
-                        }
-                    }
-                }
-            }
-        },
-        "40": {
-            "id": 40,
-            "interviewStage": "Complete",
-            "deviceClass": {
-                "basic": 4,
-                "generic": 32,
-                "specific": 1
-            },
-            "neighbors": [
-                16,
-                20,
-                26,
-                6
-            ],
-            "isListening": false,
-            "isFrequentListening": false,
-            "isRouting": true,
-            "maxBaudRate": 40000,
-            "isSecure": false,
-            "isBeaming": true,
-            "version": 4,
-            "commandClasses": {
-                "0x30": {
-                    "name": "Binary Sensor",
-                    "endpoints": {
-                        "0": {
-                            "isSupported": true,
-                            "isControlled": false,
-                            "secure": false,
-                            "version": 2
-                        }
-                    }
-                },
-                "0x31": {
-                    "name": "Multilevel Sensor",
-                    "endpoints": {
-                        "0": {
-                            "isSupported": true,
-                            "isControlled": false,
-                            "secure": false,
-                            "version": 5
                         }
                     }
                 },
@@ -1879,7 +2684,7 @@
                             "isSupported": true,
                             "isControlled": false,
                             "secure": false,
-                            "version": 0
+                            "version": 2
                         }
                     }
                 },
@@ -1890,7 +2695,7 @@
                             "isSupported": true,
                             "isControlled": false,
                             "secure": false,
-                            "version": 1
+                            "version": 3
                         }
                     }
                 },
@@ -1902,6 +2707,17 @@
                             "isControlled": false,
                             "secure": false,
                             "version": 0
+                        }
+                    }
+                },
+                "0x5b": {
+                    "name": "Central Scene",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 3
                         }
                     }
                 },
@@ -1934,18 +2750,7 @@
                             "isSupported": true,
                             "isControlled": false,
                             "secure": false,
-                            "version": 1
-                        }
-                    }
-                },
-                "0x71": {
-                    "name": "Notification",
-                    "endpoints": {
-                        "0": {
-                            "isSupported": true,
-                            "isControlled": false,
-                            "secure": false,
-                            "version": 5
+                            "version": 4
                         }
                     }
                 },
@@ -1978,29 +2783,7 @@
                             "isSupported": true,
                             "isControlled": false,
                             "secure": false,
-                            "version": 3
-                        }
-                    }
-                },
-                "0x80": {
-                    "name": "Battery",
-                    "endpoints": {
-                        "0": {
-                            "isSupported": true,
-                            "isControlled": false,
-                            "secure": false,
-                            "version": 1
-                        }
-                    }
-                },
-                "0x84": {
-                    "name": "Wake Up",
-                    "endpoints": {
-                        "0": {
-                            "isSupported": true,
-                            "isControlled": false,
-                            "secure": false,
-                            "version": 2
+                            "version": 5
                         }
                     }
                 },
@@ -2011,7 +2794,7 @@
                             "isSupported": true,
                             "isControlled": false,
                             "secure": false,
-                            "version": 2
+                            "version": 3
                         }
                     }
                 },
@@ -2022,7 +2805,29 @@
                             "isSupported": true,
                             "isControlled": false,
                             "secure": false,
-                            "version": 2
+                            "version": 3
+                        }
+                    }
+                },
+                "0x87": {
+                    "name": "Indicator",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 3
+                        }
+                    }
+                },
+                "0x8e": {
+                    "name": "Multi Channel Association",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 4
                         }
                     }
                 },
@@ -2032,7 +2837,420 @@
                         "0": {
                             "isSupported": true,
                             "isControlled": false,
+                            "secure": true,
+                            "version": 0
+                        }
+                    }
+                }
+            }
+        },
+        "55": {
+            "id": 55,
+            "interviewStage": "Complete",
+            "deviceClass": {
+                "basic": 4,
+                "generic": 16,
+                "specific": 1
+            },
+            "isListening": true,
+            "isFrequentListening": false,
+            "isRouting": true,
+            "supportedDataRates": [
+                40000,
+                100000
+            ],
+            "protocolVersion": 3,
+            "nodeType": "Routing End Node",
+            "supportsSecurity": false,
+            "supportsBeaming": true,
+            "securityClasses": {
+                "S0_Legacy": false
+            },
+            "commandClasses": {
+                "0x25": {
+                    "name": "Binary Switch",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
                             "secure": false,
+                            "version": 2
+                        }
+                    }
+                },
+                "0x27": {
+                    "name": "All Switch",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 0
+                        }
+                    }
+                },
+                "0x55": {
+                    "name": "Transport Service",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 2
+                        }
+                    }
+                },
+                "0x59": {
+                    "name": "Association Group Information",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 3
+                        }
+                    }
+                },
+                "0x5a": {
+                    "name": "Device Reset Locally",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 0
+                        }
+                    }
+                },
+                "0x5b": {
+                    "name": "Central Scene",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 3
+                        }
+                    }
+                },
+                "0x5e": {
+                    "name": "Z-Wave Plus Info",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 2
+                        }
+                    }
+                },
+                "0x6c": {
+                    "name": "Supervision",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 0
+                        }
+                    }
+                },
+                "0x70": {
+                    "name": "Configuration",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 4
+                        }
+                    }
+                },
+                "0x72": {
+                    "name": "Manufacturer Specific",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 2
+                        }
+                    }
+                },
+                "0x73": {
+                    "name": "Powerlevel",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 0
+                        }
+                    }
+                },
+                "0x7a": {
+                    "name": "Firmware Update Meta Data",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 5
+                        }
+                    }
+                },
+                "0x85": {
+                    "name": "Association",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 3
+                        }
+                    }
+                },
+                "0x86": {
+                    "name": "Version",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 3
+                        }
+                    }
+                },
+                "0x87": {
+                    "name": "Indicator",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 3
+                        }
+                    }
+                },
+                "0x8e": {
+                    "name": "Multi Channel Association",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 4
+                        }
+                    }
+                },
+                "0x9f": {
+                    "name": "Security 2",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": true,
+                            "version": 0
+                        }
+                    }
+                }
+            }
+        },
+        "56": {
+            "id": 56,
+            "interviewStage": "Complete",
+            "deviceClass": {
+                "basic": 4,
+                "generic": 16,
+                "specific": 0
+            },
+            "isListening": true,
+            "isFrequentListening": false,
+            "isRouting": true,
+            "supportedDataRates": [
+                40000,
+                100000
+            ],
+            "protocolVersion": 3,
+            "nodeType": "Routing End Node",
+            "supportsSecurity": false,
+            "supportsBeaming": true,
+            "securityClasses": {
+                "S0_Legacy": false
+            },
+            "commandClasses": {
+                "0x25": {
+                    "name": "Binary Switch",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 2
+                        }
+                    }
+                },
+                "0x55": {
+                    "name": "Transport Service",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 2
+                        }
+                    }
+                },
+                "0x59": {
+                    "name": "Association Group Information",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 3
+                        }
+                    }
+                },
+                "0x5a": {
+                    "name": "Device Reset Locally",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 0
+                        }
+                    }
+                },
+                "0x5b": {
+                    "name": "Central Scene",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 3
+                        }
+                    }
+                },
+                "0x5e": {
+                    "name": "Z-Wave Plus Info",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 2
+                        }
+                    }
+                },
+                "0x6c": {
+                    "name": "Supervision",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 0
+                        }
+                    }
+                },
+                "0x70": {
+                    "name": "Configuration",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 4
+                        }
+                    }
+                },
+                "0x72": {
+                    "name": "Manufacturer Specific",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 2
+                        }
+                    }
+                },
+                "0x73": {
+                    "name": "Powerlevel",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 0
+                        }
+                    }
+                },
+                "0x7a": {
+                    "name": "Firmware Update Meta Data",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 5
+                        }
+                    }
+                },
+                "0x85": {
+                    "name": "Association",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 3
+                        }
+                    }
+                },
+                "0x86": {
+                    "name": "Version",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 3
+                        }
+                    }
+                },
+                "0x87": {
+                    "name": "Indicator",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 3
+                        }
+                    }
+                },
+                "0x8e": {
+                    "name": "Multi Channel Association",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": false,
+                            "version": 4
+                        }
+                    }
+                },
+                "0x9f": {
+                    "name": "Security 2",
+                    "endpoints": {
+                        "0": {
+                            "isSupported": true,
+                            "isControlled": false,
+                            "secure": true,
                             "version": 0
                         }
                     }

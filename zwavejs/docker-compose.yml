@@ -1,6 +1,6 @@
   zwave:
     container_name: zwavejs2mqtt
-    image: zwavejs/zwavejs2mqtt:dev
+    image: zwavejs/zwavejs2mqtt:latest
     restart: always
     tty: true
     stop_signal: SIGINT

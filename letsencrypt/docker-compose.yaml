@@ -12,24 +12,17 @@ services:
     environment:
     - PGID=1002
     - PUID=1000
-    - FILE__EMAIL=/run/secrets/email
-    - FILE__URL=/run/secrets/duckdns_url
+    - FILE__URL=/run/secrets/url
     - SUBDOMAINS=wildcard
-    - VALIDATION=duckdns
+    - VALIDATION=dns
+    - DNSPLUGIN=cloudflare
     - TZ=America/Chicago
-    - DUCKDNSTOKEN=xxxxxxxxxxxxxxxxxxx
 #    - STAGING=true
     ports:
     - "80:80"
     - "443:443"
     secrets:
-    - email
-    - duckdns_url
-    - duckdns_token
+    - url
 secrets:
-  email:
-    file: email.txt
-  duckdns_url:
-    file: duckdns_url.txt
-  duckdns_token:
-    file: duckdns_token.txt
+  url:
+    file: url.txt

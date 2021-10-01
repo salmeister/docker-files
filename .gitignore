@@ -1,16 +1,20 @@
 # Ignore
-db
-etc
-var
-data
-config
-conf
-work
-backups
-logs
-log
+db/
+etc/
+var/
+data/
+config/
+conf/
+work/
+**/store/
+backups/
+logs/
+log/
 *provisioning
-dav
+dav/
 *.txt
 
-hass
+hass/
+docker-elk/
+
+.vs/
