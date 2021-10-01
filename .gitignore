@@ -6,7 +6,8 @@ data/
 config/
 conf/
 work/
-**/store/
+store/
+datastore/
 backups/
 logs/
 log/
