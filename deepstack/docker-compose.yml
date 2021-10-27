@@ -1,11 +1,11 @@
-version: '3.1'
+version: '3.7'
 services:
     ds:
       container_name: deepstack
       image: deepquestai/deepstack
       restart: unless-stopped
       environment:
-        - API-KEY=5a44c155-1fe7-4100-a8a2-676aa55ff9c8
+        - API-KEY_FILE=/run/secrets/apikey
         - VISION-DETECTION=True
       ports:
         - 5080:5000

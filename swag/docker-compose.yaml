@@ -1,0 +1,57 @@
+version: '3.3'
+services:
+  heimdall:
+    image: linuxserver/heimdall
+    container_name: heimdall
+    environment:
+      - PUID=1000
+      - PGID=1002
+      - TZ=America/Chicago
+    volumes:
+      - /nas/docker/heimdall:/config
+    networks:
+      - net
+    restart: unless-stopped
+  swag:
+    container_name: swag
+    image: linuxserver/swag:latest
+    restart: unless-stopped
+    networks:
+      - net
+    cap_add:
+    - NET_ADMIN
+    volumes:
+    - /nas/docker/swag/config:/config
+    - /etc/localtime:/etc/localtime:ro
+    environment:
+    - PGID=1002
+    - PUID=1000
+    - FILE__URL=/run/secrets/url
+    - SUBDOMAINS=wildcard
+    - VALIDATION=dns
+    - DNSPLUGIN=cloudflare
+    - TZ=America/Chicago
+    - CERTPROVIDER=zerossl
+    - FILE__EMAIL=/run/secrets/email
+    - FILE__MAXMINDDB_LICENSE_KEY=/run/secrets/maxmind
+#    - STAGING=true
+    ports:
+    - "80:80"
+    - "443:443"
+    secrets:
+    - url
+    - email
+    - maxmind
+secrets:
+  url:
+    file: url.txt
+  email:
+    file: email.txt
+  maxmind:
+    file: maxmind.txt
+networks:
+  net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 192.168.176.0/20

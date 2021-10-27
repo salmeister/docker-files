@@ -1,0 +1,27 @@
+version: "3.7"
+services:
+  wireguard:
+    image: lscr.io/linuxserver/wireguard
+    container_name: wireguard
+    cap_add:
+      - NET_ADMIN
+      - SYS_MODULE
+    environment:
+      - PUID=1000
+      - PGID=1002
+      - TZ=America/Chicago
+      - SERVERURL=auto
+      - SERVERPORT=51820
+      - PEERS=2
+      - PEERDNS=auto
+      #- INTERNAL_SUBNET=10.13.13.0 #optional
+      #- ALLOWEDIPS=0.0.0.0/0 #optional
+    volumes:
+      - /nas/docker/wireguard/config:/config
+      - /lib/modules:/lib/modules
+    ports:
+      - 51820:51820/udp
+    sysctls:
+      - net.ipv4.conf.all.src_valid_mark=1
+      - net.ipv6.conf.all.disable_ipv6=0
+    restart: unless-stopped

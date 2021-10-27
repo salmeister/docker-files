@@ -1,8 +1,12 @@
 # Ignore
+heimdall/
+openvpn-configs/
+
 db/
 etc/
 var/
 data/
+media/
 config/
 conf/
 work/
@@ -14,6 +18,7 @@ log/
 *provisioning
 dav/
 *.txt
+.env
 
 hass/
 docker-elk/
