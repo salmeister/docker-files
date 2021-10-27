@@ -1,0 +1,24 @@
+version: '3.7'
+services:
+  bitwarden:
+    container_name: bitwarden
+    image: vaultwarden/server:latest
+    restart: unless-stopped
+    volumes:
+    - /nas/docker/bitwarden/data:/data
+    environment:
+      - PUID=1000
+      - PGID=1002
+      - TZ=America/Chicago
+      - WEBSOCKET_ENABLED=true
+      - DOMAIN_FILE=/run/secrets/domain
+    ports:
+    - "480:80/tcp"
+    - "3012:3012/tcp"
+    healthcheck:
+      disable: true
+    secrets:
+    - domain
+secrets:
+  domain:
+    file: ./domain.txt

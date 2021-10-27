@@ -1,0 +1,19 @@
+version: "3.7"
+services:
+  frigate:
+    container_name: frigate
+    privileged: true # this may not be necessary for all setups
+    restart: unless-stopped
+    image: blakeblackshear/frigate:stable-amd64
+    shm_size: "64mb" # update for your cameras based on calculation above
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /nas/docker/frigate/config/:/config/:ro
+      - /nas/docker/frigate/media/frigate:/media/frigate
+    ports:
+      - "5555:5000"
+      - "1935:1935" # RTMP feeds
+    environment:
+      FRIGATE_WYZE_PSSWD: "${WYZE_PSSWD}"
+      FRIGATE_HIKVISION_PSSWD: "${HIKVISION_PSSWD}"
+      FRIGATE_MQTT_PSSWD: "${MQTT_PSSWD}"
