@@ -1,0 +1,116 @@
+services:
+  postgresdb:
+    image: "postgres:latest"
+    container_name: "postgres"
+    ports:
+      - "5432:5432"
+    network_mode: bridge
+    restart: unless-stopped
+    environment:
+      - POSTGRES_DB=homeassistant
+      - POSTGRES_USER_FILE=/run/secrets/postgres-usr
+      - POSTGRES_PASSWORD_FILE=/run/secrets/postgres-psswd
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready"]
+      interval: 30s
+      timeout: 5s
+      retries: 30
+    volumes:
+      - /etc/localtime:/etc/localtime
+      - /nas/docker/postgres/hass:/var/lib/postgresql/data
+    secrets:
+      - postgres-usr
+      - postgres-psswd
+
+  influxdb:
+    container_name: influxdb
+    image: influxdb:1.8.5
+    restart: unless-stopped
+    network_mode: bridge
+    environment:
+      - INFLUXDB_REPORTING_DISABLED=false
+      - INFLUXDB_ADMIN_USER_FILE=/run/secrets/influx-usr
+      - INFLUXDB_ADMIN_PASSWORD_FILE=/run/secrets/influx-psswd
+    healthcheck:
+      test: "curl -f http://192.168.1.3:8086/ping"
+      interval: 30s
+      timeout: 5s
+      retries: 30
+    volumes:
+      - /nas/docker/influxdb/data:/var/lib/influxdb
+    ports:
+      - "8086:8086"
+    secrets:
+      - influx-usr
+      - influx-psswd
+
+  vscode:
+    container_name: vscode
+    image: lscr.io/linuxserver/code-server
+    volumes:
+      - /nas/docker/codeserver/config:/config
+      - /nas/docker/homeassistant/config:/data
+      - /nas/docker/codeserver/vsixs:/installs
+    ports:
+      - "8765:8443"
+    environment:
+      - PUID=1000
+      - PGID=1002
+      - TZ=America/Chicago
+      - DEFAULT_WORKSPACE=/nas/docker/homeassistant/config
+      - FILE__PASSWORD=/run/secrets/vscode-psswd
+    restart: unless-stopped
+    secrets:
+      - vscode-psswd
+
+  esphome:
+    container_name: esphome
+    image: esphome/esphome
+    environment:
+      - TZ=America/Chicago
+      - ESPHOME_DASHBOARD_USE_PING=true
+    network_mode: host
+    ports:
+      - 6052:6052
+      - 6123:6123
+    restart: always
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /nas/docker/esphome/config:/config
+
+  homeassistant:
+    container_name: homeassistant
+    image: lscr.io/linuxserver/homeassistant:latest
+    depends_on:
+      postgresdb:
+        condition: service_healthy
+      influxdb:
+        condition: service_healthy
+    devices:
+      - "/dev/hidraw0:/dev/hidraw0"
+    environment:
+      - PUID=1000
+      - PGID=1002
+      - TZ=America/Chicago
+    volumes:
+      - /nas/docker/homeassistant/config:/config
+      - /etc/localtime:/etc/localtime:ro
+    restart: unless-stopped
+    network_mode: host
+networks:
+  default:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.2.0.0/20
+secrets:
+  postgres-usr:
+    file: /nas/docker/postgres/usr.txt
+  postgres-psswd:
+    file: /nas/docker/postgres/psswd.txt
+  influx-usr:
+    file: /nas/docker/influxdb/usr.txt
+  influx-psswd:
+    file: /nas/docker/influxdb/psswd.txt
+  vscode-psswd:
+    file: ../codeserver/psswd.txt

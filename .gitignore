@@ -12,6 +12,7 @@ conf/
 work/
 store/
 datastore/
+storage/
 backups/
 logs/
 log/

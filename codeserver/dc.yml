@@ -1,0 +1,17 @@
+version: '3'
+services:
+  vscode:
+    container_name: vscode
+    image: lscr.io/linuxserver/code-server
+    volumes:
+      - /nas/docker/codeserver/config:/config
+      - /nas/docker/homeassistant/config:/data
+      - /nas/docker/codeserver/vsixs:/installs
+    ports:
+      - "8765:8443"
+    environment:
+      - PUID=1000
+      - PGID=1002
+      - TZ=America/Chicago
+      - DEFAULT_WORKSPACE=/nas/docker/homeassistant/config
+    restart: unless-stopped
