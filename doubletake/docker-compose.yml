@@ -1,0 +1,11 @@
+version: '3.7'
+
+services:
+  doubletake:
+    container_name: doubletake
+    image: jakowenko/double-take
+    restart: unless-stopped
+    volumes:
+      - /nas/docker/doubletake/storage:/.storage
+    ports:
+      - 3030:3000

@@ -1,3 +1,4 @@
+services:
   zwave:
     container_name: zwavejs2mqtt
     image: zwavejs/zwavejs2mqtt:latest

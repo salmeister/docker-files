@@ -1,4 +1,3 @@
-version: "3.7"
 services:
   frigate:
     container_name: frigate
@@ -15,5 +14,7 @@ services:
       - "1935:1935" # RTMP feeds
     environment:
       FRIGATE_WYZE_PSSWD: "${WYZE_PSSWD}"
-      FRIGATE_HIKVISION_PSSWD: "${HIKVISION_PSSWD}"
+      FRIGATE_GARAGE_PSSWD: "${GARAGE_PSSWD}"
       FRIGATE_MQTT_PSSWD: "${MQTT_PSSWD}"
+      FRIGATE_PORCH_PSSWD: "${PORCH_PSSWD}"
+      FRIGATE_DRIVEWAY_PSSWD: "${DRIVEWAY_PSSWD}"

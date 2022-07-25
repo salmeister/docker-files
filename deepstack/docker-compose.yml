@@ -6,7 +6,7 @@ services:
       restart: unless-stopped
       environment:
         - API-KEY_FILE=/run/secrets/apikey
-        - VISION-DETECTION=True
+        - VISION-FACE=True
       ports:
         - 5080:5000
       secrets:

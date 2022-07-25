@@ -1,4 +1,3 @@
-version: '3.7'
 services:
   bitwarden:
     container_name: bitwarden
@@ -7,6 +6,7 @@ services:
     volumes:
     - /nas/docker/bitwarden/data:/data
     environment:
+      - SIGNUPS_ALLOWED=false
       - PUID=1000
       - PGID=1002
       - TZ=America/Chicago
