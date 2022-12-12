@@ -1,7 +1,7 @@
 version: '3.3'
 services:
     web:
-        image: "salasrock:5000/photosorterapi"
+        image: "dockerhub.salmeister.com/photosorterapi"
         container_name: photosorter
         ports:
             - "8500:80"

@@ -11,8 +11,8 @@ services:
       - grafana_data:/var/lib/grafana
       - /nas/docker/grafana/grafana-provisioning/:/etc/grafana/provisioning
     environment:
-     # - GF_SECURITY_ADMIN_USER=admin
-     # - GF_SECURITY_ADMIN_PASSWORD=password
+      - GF_SECURITY_ADMIN_USER=${USR}
+      - GF_SECURITY_ADMIN_PASSWORD=${PSSWD}
       - GF_SECURITY_ALLOW_EMBEDDING=true
 volumes:
   grafana_data:

@@ -1,15 +1,17 @@
 services:
   plex:
     container_name: plex
-    image: plexinc/pms-docker:latest
+    image: lscr.io/linuxserver/plex:latest
     container_name: plex
     network_mode: host
     devices:
       - /dev/dvb:/dev/dvb
+      - /dev/dri:/dev/dri
     environment:
+      - VERSION=docker
       - TZ=America/Chicago
-      - PLEX_UID=1001
-      - PLEX_GID=1002
+      - PUID=1000
+      - PGID=1002
       - PLEX_CLAIM= /run/secrets/plex_claim
     secrets:
       - plex_claim

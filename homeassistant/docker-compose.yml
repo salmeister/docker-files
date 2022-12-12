@@ -1,6 +1,6 @@
 services:
   postgresdb:
-    image: "postgres:latest"
+    image: "postgres:14"
     container_name: "postgres"
     ports:
       - "5432:5432"
@@ -66,6 +66,7 @@ services:
   esphome:
     container_name: esphome
     image: esphome/esphome
+    command: dashboard --username andy --password "${ESPHOME_PSSWD}" /config
     environment:
       - TZ=America/Chicago
       - ESPHOME_DASHBOARD_USE_PING=true
@@ -93,8 +94,10 @@ services:
       - PGID=1002
       - TZ=America/Chicago
     volumes:
+      - /run/dbus:/run/dbus:ro
       - /nas/docker/homeassistant/config:/config
       - /etc/localtime:/etc/localtime:ro
+      - /nas/docker/homeassistant/scripts:/custom-cont-init.d:ro
     restart: unless-stopped
     network_mode: host
 networks:
