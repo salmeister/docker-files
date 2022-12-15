@@ -5,15 +5,7 @@ services:
         #cap_add:
         #    - NET_ADMIN
         network_mode: host
-        restart: always       
+        restart: always
         volumes:
-            - '/nas/docker/adguard/work:/opt/adguardhome/work'
-            - '/nas/docker/adguard/conf:/opt/adguardhome/conf'
-        #ports:
-            #- 8080:80/tcp
-            #- 4443:443/tcp
-            #- 53:53
-            #- 67:67/udp
-            #- 68:68
-            #- 853:853/tcp
-            #- 3001:3000/tcp
+            - './work:/opt/adguardhome/work'
+            - './conf:/opt/adguardhome/conf'

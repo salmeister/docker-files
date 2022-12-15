@@ -16,8 +16,8 @@ services:
     secrets:
       - plex_claim
     volumes:
-      - /nas/docker/plex/config:/config
-      - /nas/temp/plex/transcode:/transcode
+      - ./plex/config:/config
+      - ./plex/transcode:/transcode
       - /nas/tv_content/TV_Shows:/tv_shows
       - /nas/tv_content/Movies:/movies
       - /nas/home_content/Videos:/videos

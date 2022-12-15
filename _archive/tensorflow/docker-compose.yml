@@ -6,4 +6,4 @@ services:
       restart: unless-stopped
       network_mode: host
       volumes:
-        - /nas/docker/tensorflow/data:/notebooks
+        - ./data:/notebooks

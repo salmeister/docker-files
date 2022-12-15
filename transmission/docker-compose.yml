@@ -10,17 +10,11 @@ services:
           options:
             max-size: 10m
         volumes:
-            - /nas/docker/transmission/openvpn-configs:/etc/openvpn/custom/
-            - /nas/docker/transmission/data:/data
+            - ./openvpn-configs:/etc/openvpn/custom/
+            - ./data:/data
             - /etc/localtime:/etc/localtime:ro
-        environment:
-            - OPENVPN_USERNAME=${USR}
-            - OPENVPN_PASSWORD=${PSSWD}
-            - OPENVPN_PROVIDER=CUSTOM
-            - OPENVPN_CONFIG=Canada-East
-            - LOCAL_NETWORK=192.168.1.0/24
-            - PUID=1000
-            - GUID=1002
+        env_file:
+          - ./.env
         cap_add:
             - NET_ADMIN
         ports:
