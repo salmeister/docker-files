@@ -25,7 +25,4 @@ dav/
 .env
 appsettings.Production.json
 
-hass/
-docker-elk/
-
 .vs/
