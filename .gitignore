@@ -25,4 +25,6 @@ dav/
 .env
 appsettings.Production.json
 
+hass/
+
 .vs/
