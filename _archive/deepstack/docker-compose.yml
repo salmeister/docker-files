@@ -12,7 +12,7 @@ services:
       secrets:
         - apikey
       volumes:
-        - /nas/docker/deepstack/datastore:/datastore
+        - ./datastore:/datastore
 secrets:
   apikey:
     file: apikey.txt

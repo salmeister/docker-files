@@ -13,4 +13,4 @@ services:
       - ANONYMOUS_METHODS=OPTIONS
     volumes:
 #      - /etc/passwd:/user.passwd
-      - /nas/docker/webdav/dav:/var/lib/dav
+      - ./dav:/var/lib/dav

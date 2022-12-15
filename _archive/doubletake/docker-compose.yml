@@ -6,6 +6,6 @@ services:
     image: jakowenko/double-take
     restart: unless-stopped
     volumes:
-      - /nas/docker/doubletake/storage:/.storage
+      - ./storage:/.storage
     ports:
       - 3030:3000

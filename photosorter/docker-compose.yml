@@ -8,7 +8,7 @@ services:
         environment:
             - ASPNETCORE_ENVIRONMENT=Production
         volumes:
-            - /nas/docker/photosorter/logs:/logs
+            - ./logs:/logs
             - /nas/home_content:/mnt/home_content
         restart: unless-stopped
         network_mode: bridge
