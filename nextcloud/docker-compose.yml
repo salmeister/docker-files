@@ -1,19 +1,22 @@
 services:
   nextcloud:
-    image: lscr.io/linuxserver/nextcloud
+    image: nextcloud
     container_name: nextcloud
     environment:
-      - PUID=1000
-      - PGID=1002
       - TZ=America/Chicago
       - REDIS_HOST=nextcloud-redis
       - REDIS_PORT=6379
       - REDIS_HOST_PASSWORD=${REDIS_PSSWD}
+      - MYSQL_DATABASE=nextcloud
+      - MYSQL_USER=ncuser
+      - MYSQL_PASSWORD=${DB_PSSWD}
+      - MYSQL_HOST=nextcloud-db
     ports:
-      - 4443:443
+      - 8001:80
     volumes:
-      - /nas/docker/nextcloud/config:/config
-      - /nas/docker/nextcloud/data:/data
+      - /etc/localtime:/etc/localtime:ro
+      - ./config:/var/www/html/config
+      - ./data:/var/www/html/data
       - /nas/home_content/Media-Import:/mnt/Media-Import
     depends_on:
       nextcloud-db:
@@ -22,18 +25,17 @@ services:
         condition: service_healthy
     restart: unless-stopped
   nextcloud-db:
-    image: lscr.io/linuxserver/mariadb
+    image: mariadb
     container_name: nextcloud-db
+    command: --transaction-isolation=READ-COMMITTED --binlog-format=ROW --innodb-file-per-table=1 --skip-innodb-read-only-compressed
     environment:
-      - PUID=1000
-      - PGID=1002
       - MYSQL_ROOT_PASSWORD=${DB_ROOT_PSSWD}
       - TZ=America/Chicago
       - MYSQL_DATABASE=nextcloud
       - MYSQL_USER=ncuser
       - MYSQL_PASSWORD=${DB_PSSWD}
     volumes:
-      - /nas/docker/nextcloud/db/config:/config
+      - ./db:/var/lib/mysql
     healthcheck:
       test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
       timeout: 20s
@@ -49,3 +51,9 @@ services:
       interval: 10s
       timeout: 5s
       retries: 30
+networks:
+  default:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.3.0.0/20

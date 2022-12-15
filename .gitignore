@@ -16,6 +16,8 @@ storage/
 backups/
 logs/
 log/
+static/
+temp/
 *provisioning
 dav/
 *.txt
