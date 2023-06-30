@@ -55,8 +55,8 @@ services:
       - ./rtlamr2mqtt/data:/var/lib/rtlamr2mqtt
 
   postgresdb:
-    image: "postgres:14"
-    container_name: "postgres"
+    image: postgres:14
+    container_name: postgres
     ports:
       - "5432:5432"
     network_mode: bridge
@@ -101,7 +101,7 @@ services:
 
   vscode:
     container_name: vscode
-    image: lscr.io/linuxserver/code-server
+    image: linuxserver/code-server
     volumes:
       - ./codeserver/config:/config
       - ./ha/config:/data
@@ -135,21 +135,23 @@ services:
     container_name: frigate
     privileged: true # this may not be necessary for all setups
     restart: unless-stopped
-    image: blakeblackshear/frigate:stable-amd64
-    shm_size: "64mb" # update for your cameras based on calculation above
+    image: ghcr.io/blakeblackshear/frigate:stable
+    shm_size: "76mb" # update for your cameras based on calculation above
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - ./frigate/config/:/config/:ro
+      - ./frigate/config/:/config
       - ./frigate/media/frigate:/media/frigate
     ports:
       - "5555:5000"
-      - "1935:1935" # RTMP feeds
+      - "8554:8554"
+      - "8555:8555/tcp"
+      - "8555:8555/udp"
     env_file:
       - ./frigate/.env
 
   homeassistant:
     container_name: homeassistant
-    image: lscr.io/linuxserver/homeassistant:latest
+    image: linuxserver/homeassistant:latest
     depends_on:
       postgresdb:
         condition: service_healthy
