@@ -25,6 +25,7 @@ dav/
 .env
 appsettings.Production.json
 rtlamr2mqtt.yaml
+output.json
 
 hass/
 
