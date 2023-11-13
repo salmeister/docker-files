@@ -2,11 +2,10 @@ services:
   plex:
     container_name: plex
     image: lscr.io/linuxserver/plex:latest
-    container_name: plex
     network_mode: host
-    devices:
-      - /dev/dvb:/dev/dvb
-      - /dev/dri:/dev/dri
+    #devices:
+    #  - /dev/dvb:/dev/dvb
+    #  - /dev/dri:/dev/dri
     environment:
       - VERSION=docker
       - TZ=America/Chicago
@@ -16,8 +15,8 @@ services:
     secrets:
       - plex_claim
     volumes:
-      - ./plex/config:/config
-      - ./plex/transcode:/transcode
+      - ./config:/config
+      - ./transcode/temp:/transcode
       - /nas/tv_content/TV_Shows:/tv_shows
       - /nas/tv_content/Movies:/movies
       - /nas/home_content/Videos:/videos

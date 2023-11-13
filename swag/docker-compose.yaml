@@ -1,16 +1,16 @@
 services:
-  heimdall:
-    image: linuxserver/heimdall
-    container_name: heimdall
-    environment:
-      - PUID=1000
-      - PGID=1002
-      - TZ=America/Chicago
-    volumes:
-      - ./heimdall/config:/config
-    networks:
-      - net
-    restart: unless-stopped
+#  heimdall:
+#    image: linuxserver/heimdall
+#    container_name: heimdall
+#    environment:
+#      - PUID=1000
+#      - PGID=1002
+#      - TZ=America/Chicago
+#    volumes:
+#      - ./heimdall/config:/config
+#    networks:
+#      - net
+#    restart: unless-stopped
   swag:
     container_name: swag
     image: linuxserver/swag:latest
@@ -22,6 +22,7 @@ services:
     volumes:
     - ./config:/config
     - /etc/localtime:/etc/localtime:ro
+    - ../recipes/media:/media
     environment:
     - PGID=1002
     - PUID=1000
@@ -29,6 +30,7 @@ services:
     - SUBDOMAINS=wildcard
     - VALIDATION=dns
     - DNSPLUGIN=cloudflare
+    - PROPAGATION=60
     - TZ=America/Chicago
     - CERTPROVIDER=zerossl
     - FILE__EMAIL=/run/secrets/email

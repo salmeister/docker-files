@@ -4,11 +4,11 @@ services:
     restart: unless-stopped
     container_name: recipes-db
     image: postgres:11-alpine
-    healthcheck:
-      test: ["CMD-SHELL", "pg_isready"]
-      interval: 30s
-      timeout: 5s
-      retries: 30
+#    healthcheck:
+#      test: ["CMD-SHELL", "pg_isready"]
+#      interval: 30s
+#      timeout: 5s
+#      retries: 30
     expose:
       - ${POSTGRES_PORT}
     volumes:
@@ -17,7 +17,7 @@ services:
       - ./.env
 
   recipes:
-    image: vabene1111/recipes
+    image: vabene1111/recipes:latest
     container_name: recipes
     restart: unless-stopped
     ports:
@@ -31,9 +31,9 @@ services:
     volumes:
       - ./static:/opt/recipes/staticfiles
       - ./media:/opt/recipes/mediafiles
-    depends_on:
-      recipes-db:
-        condition: service_healthy
+#    depends_on:
+#      recipes-db:
+#        condition: service_healthy
 networks:
   default:
     driver: bridge
