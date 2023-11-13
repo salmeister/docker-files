@@ -137,6 +137,8 @@ services:
     restart: unless-stopped
     image: ghcr.io/blakeblackshear/frigate:stable
     shm_size: "76mb" # update for your cameras based on calculation above
+    devices:
+      - "/dev/apex_0:/dev/apex_0"
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - ./frigate/config/:/config
