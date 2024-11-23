@@ -6,6 +6,9 @@ services:
     image: mcr.microsoft.com/mssql/server:2019-CU13-ubuntu-20.04
     user: root
     restart: unless-stopped
+    deploy:
+      labels:
+        - "com.centurylinklabs.watchtower.enable=false"
     environment:
       - "ACCEPT_EULA=Y"
       - SA_PASSWORD=run/secrets/psswd.txt
@@ -22,6 +25,9 @@ services:
     container_name: mybudget-webui
     image: dockerhub.salmeister.com/mybudget-webui:latest
     restart: unless-stopped
+    deploy:
+      labels:
+        - "com.centurylinklabs.watchtower.enable=false"
     environment:
       - "CONNECTIONSTRINGS:MYBUDGET=${CONNSTRING}"
     ports:
