@@ -26,7 +26,6 @@ services:
     devices:
       # path to zigbee USB device
       - /dev/serial/by-id/usb-1a86_USB_Serial-if00-port0
-
     environment:
       - TZ=America/Chicago
 
@@ -37,7 +36,7 @@ services:
     tty: true
     stop_signal: SIGINT
     devices:
-      - "/dev/serial/by-id/usb-0658_0200-if00:/dev/ttyACM0"
+      - /dev/serial/by-id/usb-0658_0200-if00:/dev/zwave
     volumes:
       - ./zwavejs/store:/usr/src/app/store
     ports:
@@ -54,50 +53,48 @@ services:
       - ./rtlamr2mqtt/rtlamr2mqtt.yaml:/etc/rtlamr2mqtt.yaml:ro
       - ./rtlamr2mqtt/data:/var/lib/rtlamr2mqtt
 
-  postgresdb:
-    image: postgres:14
-    container_name: postgres
-    ports:
-      - "5432:5432"
-    network_mode: bridge
-    restart: unless-stopped
-    environment:
-      - POSTGRES_DB=homeassistant
-      - POSTGRES_USER_FILE=/run/secrets/postgres-usr
-      - POSTGRES_PASSWORD_FILE=/run/secrets/postgres-psswd
-    healthcheck:
-      test: ["CMD-SHELL", "pg_isready"]
-      interval: 30s
-      timeout: 5s
-      retries: 30
-    volumes:
-      - /etc/localtime:/etc/localtime
-      - ./postgres/hass:/var/lib/postgresql/data
-    secrets:
-      - postgres-usr
-      - postgres-psswd
+#  postgresdb:
+#    image: postgres:16-alpine
+#    container_name: postgres
+#    ports:
+#      - "5432:5432"
+#    #network_mode: bridge
+#    restart: unless-stopped
+#    healthcheck:
+#      test: ["CMD-SHELL", "pg_isready"]
+#      interval: 30s
+#      timeout: 5s
+#      retries: 60
+#    volumes:
+#      - /etc/localtime:/etc/localtime
+#      - ./postgres/data:/var/lib/postgresql/data
+#    env_file:
+#      - ./postgres/.env
 
-  influxdb:
-    container_name: influxdb
-    image: influxdb:1.8.5
-    restart: unless-stopped
-    network_mode: bridge
-    environment:
-      - INFLUXDB_REPORTING_DISABLED=false
-      - INFLUXDB_ADMIN_USER_FILE=/run/secrets/influx-usr
-      - INFLUXDB_ADMIN_PASSWORD_FILE=/run/secrets/influx-psswd
-    healthcheck:
-      test: "curl -f http://192.168.1.3:8086/ping"
-      interval: 30s
-      timeout: 5s
-      retries: 30
-    volumes:
-      - ./influxdb/data:/var/lib/influxdb
-    ports:
-      - "8086:8086"
-    secrets:
-      - influx-usr
-      - influx-psswd
+#  influxdb:
+#    container_name: influxdb
+#    image: influxdb:latest
+#    restart: unless-stopped
+#    #network_mode: bridge
+#    environment:
+#      - INFLUXDB_REPORTING_DISABLED=false
+#      - DOCKER_INFLUXDB_INIT_USERNAME_FILE=/run/secrets/influx-usr
+#      - DOCKER_INFLUXDB_INIT_PASSWORD_FILE=/run/secrets/influx-psswd
+#      - DOCKER_INFLUXDB_INIT_ORG=salmeister
+#      - DOCKER_INFLUXDB_INIT_BUCKET=homeassistant
+#    healthcheck:
+#      test: influx ping || exit 1
+#      interval: 30s
+#      timeout: 5s
+#      retries: 60
+#    volumes:
+#      - ./influxdb/data:/var/lib/influxdb
+#      - ./influxdb/dataV2:/var/lib/influxdb2
+#    ports:
+#      - "8086:8086"
+#    secrets:
+#      - influx-usr
+#      - influx-psswd
 
   vscode:
     container_name: vscode
@@ -105,14 +102,14 @@ services:
     volumes:
       - ./codeserver/config:/config
       - ./ha/config:/data
-      - .codeserver/vsixs:/installs
+      - ./codeserver/vsixs:/installs
     ports:
       - "8765:8443"
     environment:
       - PUID=1000
       - PGID=1002
       - TZ=America/Chicago
-      - DEFAULT_WORKSPACE=/nas/docker/homeassistant/config
+      - DEFAULT_WORKSPACE=/data
       - FILE__PASSWORD=/run/secrets/vscode-psswd
     restart: unless-stopped
     secrets:
@@ -125,7 +122,9 @@ services:
     environment:
       - TZ=America/Chicago
       - ESPHOME_DASHBOARD_USE_PING=true
-    network_mode: host
+    #network_mode: host
+    ports:
+      - 6052:6052
     restart: always
     volumes:
       - /etc/localtime:/etc/localtime:ro
@@ -136,14 +135,19 @@ services:
     privileged: true # this may not be necessary for all setups
     restart: unless-stopped
     image: ghcr.io/blakeblackshear/frigate:stable
-    shm_size: "76mb" # update for your cameras based on calculation above
+    shm_size: "128mb"
     devices:
       - "/dev/apex_0:/dev/apex_0"
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - ./frigate/config/:/config
       - ./frigate/media/frigate:/media/frigate
+      - type: tmpfs # Optional: 1GB of memory, reduces SSD/SD Card wear
+        target: /tmp/cache
+        tmpfs:
+          size: 1000000000
     ports:
+      - "8971:8971"
       - "5555:5000"
       - "8554:8554"
       - "8555:8555/tcp"
@@ -154,11 +158,11 @@ services:
   homeassistant:
     container_name: homeassistant
     image: linuxserver/homeassistant:latest
-    depends_on:
-      postgresdb:
-        condition: service_healthy
-      influxdb:
-        condition: service_healthy
+#    depends_on:
+#      postgresdb:
+#        condition: service_healthy
+#      influxdb:
+#        condition: service_healthy
     devices:
       - "/dev/hidraw0:/dev/hidraw0"
     environment:
@@ -172,6 +176,8 @@ services:
       - ./ha/scripts:/custom-cont-init.d:ro
     restart: unless-stopped
     network_mode: host
+    #ports:
+    #  - 8123:8123 #optional
 networks:
   default:
     driver: bridge
@@ -179,13 +185,9 @@ networks:
       config:
         - subnet: 172.2.0.0/20
 secrets:
-  postgres-usr:
-    file: ./postgres/usr.txt
-  postgres-psswd:
-    file: ./postgres/psswd.txt
-  influx-usr:
-    file: ./influxdb/usr.txt
-  influx-psswd:
-    file: ./influxdb/psswd.txt
+#  influx-usr:
+#    file: ./influxdb/usr.txt
+#  influx-psswd:
+#    file: ./influxdb/psswd.txt
   vscode-psswd:
     file: ./codeserver/psswd.txt

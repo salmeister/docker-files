@@ -2,6 +2,8 @@
 heimdall/
 openvpn-configs/
 
+transcode/
+library/
 db/
 etc/
 var/

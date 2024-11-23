@@ -3,14 +3,14 @@ services:
   recipes-db:
     restart: unless-stopped
     container_name: recipes-db
-    image: postgres:11-alpine
+    image: postgres:16-alpine
 #    healthcheck:
 #      test: ["CMD-SHELL", "pg_isready"]
 #      interval: 30s
 #      timeout: 5s
 #      retries: 30
-    expose:
-      - ${POSTGRES_PORT}
+#    expose:
+#      - ${POSTGRES_PORT}
     volumes:
       - ./db:/var/lib/postgresql/data
     env_file:
@@ -26,13 +26,13 @@ services:
       - ./.env
     environment:
       - UID=1000
-      - GID=1000
+      - GID=1002
       - TZ=America/Chicago
     volumes:
       - ./static:/opt/recipes/staticfiles
       - ./media:/opt/recipes/mediafiles
-#    depends_on:
-#      recipes-db:
+    depends_on:
+      - recipes-db
 #        condition: service_healthy
 networks:
   default:

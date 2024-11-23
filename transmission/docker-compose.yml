@@ -1,5 +1,3 @@
-version: '3.7'
-
 services:
     transmission-openvpn:
         image: haugene/transmission-openvpn:latest
