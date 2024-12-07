@@ -24,6 +24,7 @@ vsixs/
 *provisioning
 dav/
 *.txt
+*.subdomain.conf
 .env
 appsettings.Production.json
 rtlamr2mqtt.yaml
