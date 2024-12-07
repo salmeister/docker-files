@@ -1,21 +1,34 @@
-version: '3.7'
-
 services:
-    transmission-openvpn:
-        image: haugene/transmission-openvpn:latest
-        container_name: transmission
-        restart: always
-        logging:
-          driver: json-file
-          options:
-            max-size: 10m
-        volumes:
-            - ./openvpn-configs:/etc/openvpn/custom/
-            - ./data:/data
-            - /etc/localtime:/etc/localtime:ro
-        env_file:
-          - ./.env
-        cap_add:
-            - NET_ADMIN
-        ports:
-            - 9091:9091
+  transmission-openvpn:
+    image: haugene/transmission-openvpn
+    container_name: transmission-vpn
+    networks:
+      - shared-net
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun
+    restart: always
+    ports:
+      - "9091:9091" # Transmission Web UI port
+    volumes:
+      - ./openvpn-configs:/etc/openvpn/custom/
+      - ./data:/data
+      - /etc/localtime:/etc/localtime:ro
+    env_file:
+      - ./.env
+    labels:
+      - swag=enable
+      - swag_port=9091
+      - swag_url=transmission.*
+    environment:
+      - OPENVPN_OPTS=--inactive 3600 --ping 10 --ping-exit 60 # Additional options for VPN connection
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+
+networks:
+  shared-net:
+    external: true
+    name: shared-net
