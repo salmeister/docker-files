@@ -1,17 +1,23 @@
-version: '3.3'
 services:
-    web:
-        image: "dockerhub.salmeister.com/photosorterapi"
+    photosorter:
+        image: ghcr.io/salmeister/salmeister/photo-sorter-api/photosorterapi:latest
         container_name: photosorter
-        deploy:
-          labels:
-            - "com.centurylinklabs.watchtower.enable=false"
+        labels:
+          - swag=enable
+          - swag_address=photosorter
+          - swag_url=photosorter.*
+          - swag_port=8500
         ports:
-            - "8500:80"
+          - 8500:8080
         environment:
-            - ASPNETCORE_ENVIRONMENT=Production
+          - ASPNETCORE_ENVIRONMENT=Production
         volumes:
-            - ./logs:/logs
-            - /nas/home_content:/mnt/home_content
+          - ./logs:/logs
+          - /nas/home_content:/mnt/home_content
         restart: unless-stopped
-        network_mode: bridge
+        networks:
+          - shared-net
+networks:
+  shared-net:
+    external: true
+    name: shared-net

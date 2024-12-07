@@ -10,10 +10,12 @@ name: immich
 
 services:
   immich-server:
-    container_name: immich_server
+    container_name: immich-server
     image: ghcr.io/immich-app/immich-server:${IMMICH_VERSION:-release}
     labels:
       - "com.centurylinklabs.watchtower.enable=false"
+      - swag=enable
+      - swag_url=photos.*
     volumes:
       - ${UPLOAD_LOCATION}:/usr/src/app/upload
       - /etc/localtime:/etc/localtime:ro
@@ -22,6 +24,8 @@ services:
       - /etc/localtime:/etc/localtime:ro
     env_file:
       - .env
+    networks:
+      - shared-net
     ports:
       - 2283:2283
     depends_on:
@@ -43,19 +47,22 @@ services:
       - model-cache:/cache
     env_file:
       - .env
+    networks:
+      - shared-net
     restart: always
 
   redis:
     container_name: immich_redis
     image: registry.hub.docker.com/library/redis:6.2-alpine@sha256:84882e87b54734154586e5f8abd4dce69fe7311315e2fc6d67c29614c8de2672
+    networks:
+      - shared-net
     restart: always
-    labels:
-      - "com.centurylinklabs.watchtower.enable=false"
+
   database:
     container_name: immich_postgres
     image: registry.hub.docker.com/tensorchord/pgvecto-rs:pg14-v0.2.0@sha256:90724186f0a3517cf6914295b5ab410db9ce23190a2d9d0b9dd6463e3fa298f0
-    labels:
-      - "com.centurylinklabs.watchtower.enable=false"
+    networks:
+      - shared-net
     environment:
       POSTGRES_PASSWORD: ${DB_PASSWORD}
       POSTGRES_USER: ${DB_USERNAME}
@@ -68,3 +75,8 @@ services:
 
 volumes:
   model-cache:
+
+networks:
+  shared-net:
+    external: true
+    name: shared-net

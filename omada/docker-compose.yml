@@ -1,10 +1,18 @@
 services:
-   omada-controller:
-     container_name: omada-controller
+   omada:
+     container_name: omada
      image: mbentley/omada-controller:beta-5.14
      env_file:
        - ./.env
-     network_mode: host
+     ports:
+      - "8043:8043"  # Management HTTPS
+      - "8088:8088"  # Management HTTP
+      - "8843:8843"  # Portal HTTPS
+      - "27001:27001/udp"  # App Discovery
+      - "29810:29810/udp"  # Discovery
+      - "29811-29814:29811-29814"  # Various Omada services
+     networks:
+       - shared-net
      ulimits:
       nofile:
         soft: 4096
@@ -14,3 +22,11 @@ services:
       - ./EAPController/data:/opt/tplink/EAPController/data
       - ./EAPController/work:/opt/tplink/EAPController/work
       - ./EAPController/logs:/opt/tplink/EAPController/logs
+     labels:
+       - swag=enable
+       - swag_port=8043
+       - swag_proto=https
+networks:
+  shared-net:
+    external: true
+    name: shared-net
