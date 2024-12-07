@@ -2,6 +2,8 @@
 heimdall/
 openvpn-configs/
 
+transcode/
+library/
 db/
 etc/
 var/
@@ -22,6 +24,7 @@ vsixs/
 *provisioning
 dav/
 *.txt
+*.subdomain.conf
 .env
 appsettings.Production.json
 rtlamr2mqtt.yaml

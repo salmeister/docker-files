@@ -1,7 +1,9 @@
 services:
-  bitwarden:
-    container_name: bitwarden
+  vaultwarden:
+    container_name: vaultwarden
     image: vaultwarden/server:latest
+    networks:
+      - shared-net
     restart: unless-stopped
     volumes:
     - /nas/docker/bitwarden/data:/data
@@ -12,13 +14,24 @@ services:
       - TZ=America/Chicago
       - WEBSOCKET_ENABLED=true
       - DOMAIN_FILE=/run/secrets/domain
+      - ADMIN_TOKEN_FILE=/run/secrets/adminpsswd
     ports:
-    - "480:80/tcp"
-    - "3012:3012/tcp"
+    - 480:80
     healthcheck:
       disable: true
     secrets:
     - domain
+    - adminpsswd
+#    labels:
+#      - swag=enable
+#      - swag_port=480
+#      - swag_url=bitwarden.*
 secrets:
   domain:
     file: ./domain.txt
+  adminpsswd:
+    file: ./adminpsswd.txt
+networks:
+  shared-net:
+    external: true
+    name: shared-net
