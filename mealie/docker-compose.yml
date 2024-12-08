@@ -1,0 +1,24 @@
+services:
+  mealie:
+    image: ghcr.io/mealie-recipes/mealie:latest
+    container_name: mealie
+    networks:
+      - shared-net
+    ports:
+      - 9925:80
+    volumes:
+      - ./data:/app/data
+    environment:
+      - PUID=1000
+      - PGID=1002
+      - TZ=America/Chicago
+      - ALLOW_SIGNUP=false
+    restart: unless-stopped
+    labels:
+      - swag=enable
+      - swag_url=meals.*
+
+networks:
+  shared-net:
+    external: true
+    name: shared-net

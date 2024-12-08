@@ -1,0 +1,28 @@
+services:
+  notes:
+    container_name: notes
+    image: couchdb:3.3.3
+    environment:
+      - PUID=1000
+      - PGID=1002
+      - UMASK=0022
+      - TZ=America/Chicago
+    env_file:
+       - ./.env
+    volumes:
+      - ./couchdb/data:/opt/couchdb/data
+      - ./couchdb/config/local.ini:/opt/couchdb/etc/local.ini
+      - ./couchdb/etc/local.d:/opt/couchdb/etc/local.d
+    networks:
+      - shared-net
+    ports:
+      - 5984:5984
+    restart: unless-stopped
+    labels:
+      - swag=enable
+      - swag_port=5984
+
+networks:
+  shared-net:
+    external: true
+    name: shared-net
