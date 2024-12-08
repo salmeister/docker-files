@@ -2,21 +2,31 @@ services:
   mealie:
     image: ghcr.io/mealie-recipes/mealie:latest
     container_name: mealie
+    labels:
+      - swag=enable
+      - swag_port=9925
+      - swag_url=meals.*
     networks:
       - shared-net
     ports:
-      - 9925:80
+      - 9925:9000
     volumes:
       - ./data:/app/data
     environment:
       - PUID=1000
       - PGID=1002
       - TZ=America/Chicago
-      - ALLOW_SIGNUP=false
+      - ALLOW_SIGNUP=true
+      - RECIPE_PUBLIC=false
+      - MAX_WORKERS=1
+      - DB_ENGINE=sqlite
+    env_file:
+      - ./.env
+    ports:
+      - "9090:9000"
+    volumes:
+      - ./data:/app/data
     restart: unless-stopped
-    labels:
-      - swag=enable
-      - swag_url=meals.*
 
 networks:
   shared-net:

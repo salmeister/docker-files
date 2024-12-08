@@ -5,10 +5,8 @@ services:
     networks:
       - shared-net
     labels:
-      - "com.centurylinklabs.watchtower.enable=false"
-#      - swag=enable
-#      - swag_port=8001
-#      - swag_url=nextcloud.*
+      - com.centurylinklabs.watchtower.enable=false
+      # reverse proxy manually configured at swag/config/nginx/proxy-conf/nextcloud.subdomain.conf
     environment:
       - TZ=America/Chicago
       - REDIS_HOST=nextcloud-redis

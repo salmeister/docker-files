@@ -1,48 +1,51 @@
 services:
-#  heimdall:
-#    image: linuxserver/heimdall
-#    container_name: heimdall
-#    environment:
-#      - PUID=1000
-#      - PGID=1002
-#      - TZ=America/Chicago
-#    volumes:
-#      - ./heimdall/config:/config
-#    networks:
-#      - net
-#    restart: unless-stopped
   swag:
+    image: lscr.io/linuxserver/swag
     container_name: swag
-    image: linuxserver/swag:latest
+    cap_add:
+      - NET_ADMIN
+    environment:
+      - PUID=1000
+      - PGID=1002
+      - FILE__URL=/run/secrets/url
+      - VALIDATION=dns
+      - SUBDOMAINS=wildcard
+      - DNSPLUGIN=cloudflare
+      - DOCKER_MODS=linuxserver/mods:swag-auto-proxy|linuxserver/mods:universal-docker|linuxserver/mods:universal-cloudflared
+      - DOCKER_HOST=dockerproxy
+      - FILE__CF_TUNNEL_CONFIG=/config/tunnelconfig.yml
+      - PROPAGATION=60
+      - TZ=America/Chicago
+      - CERTPROVIDER=zerossl
+      - FILE__EMAIL=/run/secrets/email
+      - FILE__MAXMINDDB_LICENSE_KEY=/run/secrets/maxmind
+    env_file:
+      - ./.env
+    extra_hosts:
+      - salmeister.com:127.0.0.1
     restart: unless-stopped
     networks:
-      - net
-    cap_add:
-    - NET_ADMIN
+      - shared-net
     volumes:
     - ./config:/config
     - /etc/localtime:/etc/localtime:ro
-    - ../recipes/media:/media
-    environment:
-    - PGID=1002
-    - PUID=1000
-    - FILE__URL=/run/secrets/url
-    - SUBDOMAINS=wildcard
-    - VALIDATION=dns
-    - DNSPLUGIN=cloudflare
-    - PROPAGATION=60
-    - TZ=America/Chicago
-    - CERTPROVIDER=zerossl
-    - FILE__EMAIL=/run/secrets/email
-    - FILE__MAXMINDDB_LICENSE_KEY=/run/secrets/maxmind
-#    - STAGING=true
-    ports:
-    - "80:80"
-    - "443:443"
     secrets:
     - url
     - email
     - maxmind
+
+  dockerproxy:
+    image: lscr.io/linuxserver/socket-proxy
+    container_name: dockerproxy
+    networks:
+      - shared-net
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    environment:
+      - CONTAINERS=1
+      - POST=0
+    restart: unless-stopped
+
 secrets:
   url:
     file: url.txt
@@ -50,9 +53,11 @@ secrets:
     file: email.txt
   maxmind:
     file: maxmind.txt
+
 networks:
-  net:
+  shared-net:
     driver: bridge
+    name: shared-net
     ipam:
       config:
-        - subnet: 192.168.176.0/20
+        - subnet: 192.168.70.0/24
