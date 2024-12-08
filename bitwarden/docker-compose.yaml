@@ -2,6 +2,8 @@ services:
   vaultwarden:
     container_name: vaultwarden
     image: vaultwarden/server:latest
+    #labels:
+    #  - swag=enable #manually set at swag/config/nginx/proxy-conf/bitwarden.subdomain.conf
     networks:
       - shared-net
     restart: unless-stopped
