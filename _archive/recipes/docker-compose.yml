@@ -15,6 +15,8 @@ services:
       - ./db:/var/lib/postgresql/data
     env_file:
       - ./.env
+    networks:
+      - shared-net
 
   recipes:
     image: vabene1111/recipes:latest
@@ -24,6 +26,8 @@ services:
       - 8002:8080
     env_file:
       - ./.env
+    networks:
+      - shared-net
     environment:
       - UID=1000
       - GID=1002
@@ -33,10 +37,13 @@ services:
       - ./media:/opt/recipes/mediafiles
     depends_on:
       - recipes-db
-#        condition: service_healthy
+    labels:
+      - swag=enable
+      - swag_port=8002
+      - swag_address=recipes
+      - swag_url=recipes.salmeister.com
+
 networks:
-  default:
-    driver: bridge
-    ipam:
-      config:
-        - subnet: 172.4.0.0/20
+  shared-net:
+    external: true
+    name: shared-net
