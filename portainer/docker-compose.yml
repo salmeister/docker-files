@@ -3,6 +3,12 @@ services:
         container_name: portainer
         image: portainer/portainer-ce
         command: -H unix:///var/run/docker.sock
+        labels:
+          - swag=enable
+          - swag_port=9000
+          - swag_url=portainer.*
+        networks:
+          - shared-net
         restart: always
         ports:
             - 9000:9000
@@ -13,3 +19,8 @@ services:
 
 volumes:
     portainer_data:
+
+networks:
+  shared-net:
+    external: true
+    name: shared-net

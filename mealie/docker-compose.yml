@@ -1,6 +1,6 @@
 services:
   mealie:
-    image: hkotel/mealie:latest
+    image: ghcr.io/mealie-recipes/mealie:latest
     container_name: mealie
     labels:
       - swag=enable
@@ -10,10 +10,12 @@ services:
       - PUID=1000
       - PGID=1002
       - TZ=America/Chicago
-      - ALLOW_SIGNUP=false
+      - ALLOW_SIGNUP=true
       - RECIPE_PUBLIC=false
       - MAX_WORKERS=1
       - DB_ENGINE=sqlite
+    env_file:
+      - ./.env
     ports:
       - "9090:9000"
     volumes:
