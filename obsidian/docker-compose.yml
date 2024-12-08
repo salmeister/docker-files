@@ -1,0 +1,32 @@
+services:
+  obsidian:
+    image: couchdb:3.3.3
+    container_name: obsidian
+    environment:
+      - PUID=1000
+      - PGID=1002
+      - UMASK=0022
+      - TZ=America/Chicago
+    env_file:
+      - ./.env
+    volumes:
+      - ./data:/opt/couchdb/data
+      - ./etc/local.d:/opt/couchdb/etc/local.d
+      - ./log:/opt/couchdb/var/log/couchdb
+    ports:
+      - "5984:5984"
+    restart: unless-stopped
+    labels:
+      - swag=enable
+      - swag_port:5984
+      - swag_url:notes.*
+
+networks:
+  default:
+    name: shared-net
+    external: true
+
+volumes:
+  data:
+  etc:
+  log:
