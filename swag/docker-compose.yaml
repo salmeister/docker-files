@@ -19,6 +19,8 @@ services:
       - CERTPROVIDER=zerossl
       - FILE__EMAIL=/run/secrets/email
       - FILE__MAXMINDDB_LICENSE_KEY=/run/secrets/maxmind
+    env_file:
+      - ./.env
     extra_hosts:
       - salmeister.com:127.0.0.1
     restart: unless-stopped
