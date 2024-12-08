@@ -1,0 +1,11 @@
+services:
+    adguard-home:
+        container_name: adguard
+        image: adguard/adguardhome
+        #cap_add:
+        #    - NET_ADMIN
+        network_mode: host
+        restart: always
+        volumes:
+            - './work:/opt/adguardhome/work'
+            - './conf:/opt/adguardhome/conf'

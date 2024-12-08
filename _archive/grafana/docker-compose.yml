@@ -1,0 +1,44 @@
+services:
+  grafana:
+    container_name: grafana
+    image: grafana/grafana:latest
+    restart: unless-stopped
+    ports:
+      - '3333:3000'
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./grafana-provisioning/:/etc/grafana/provisioning
+    environment:
+      - GF_SECURITY_ADMIN_USER=${USR}
+      - GF_SECURITY_ADMIN_PASSWORD=${PSSWD}
+      - GF_SECURITY_ALLOW_EMBEDDING=true
+
+  telegraf:
+    container_name: telegraf
+    image: telegraf:latest
+    user: "${UID}:${GID}"
+    volumes:
+      - ./telegraf/config/telegraf.conf:/etc/telegraf/telegraf.conf:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    ports:
+      - '19999:19999'
+    restart: always
+
+  chronograf:
+    container_name: chronograf
+    image: chronograf:latest
+    restart: unless-stopped
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./chronograf/data:/var/lib/chronograf
+    env_file:
+      - ./chronograf/.env
+
+volumes:
+  grafana_data:
+    driver: local
+    driver_opts:
+       o: bind
+       type: none
+       device: ./data

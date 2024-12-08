@@ -1,7 +1,7 @@
 services:
-  obsidian:
+  obsidian-livesync:
+    container_name: obsidian-livesync
     image: couchdb:3.3.3
-    container_name: obsidian
     environment:
       - PUID=1000
       - PGID=1002
@@ -13,6 +13,8 @@ services:
       - ./data:/opt/couchdb/data
       - ./etc/local.d:/opt/couchdb/etc/local.d
       - ./log:/opt/couchdb/var/log/couchdb
+    networks:
+      - shared-net
     ports:
       - 5984:5984
     restart: unless-stopped
@@ -21,12 +23,12 @@ services:
       - swag_port=5984
       - swag_url=notes.*
 
-networks:
-  default:
-    name: shared-net
-    external: true
-
 volumes:
   data:
   etc:
   log:
+
+networks:
+  shared-net:
+    external: true
+    name: shared-net

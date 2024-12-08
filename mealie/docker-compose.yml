@@ -4,8 +4,14 @@ services:
     container_name: mealie
     labels:
       - swag=enable
-      - swag_port=9090
+      - swag_port=9925
       - swag_url=meals.*
+    networks:
+      - shared-net
+    ports:
+      - 9925:9000
+    volumes:
+      - ./data:/app/data
     environment:
       - PUID=1000
       - PGID=1002
@@ -20,8 +26,6 @@ services:
       - "9090:9000"
     volumes:
       - ./data:/app/data
-    networks:
-      - shared-net
     restart: unless-stopped
 
 networks:

@@ -26,7 +26,15 @@ vsixs/
 dav/
 *.txt
 *.subdomain.conf
+<<<<<<< HEAD
 .save
+=======
+*.png
+*.save
+*.bolt
+*.wal
+*.swp
+>>>>>>> 365f0fab75f5a2b21f93fb8feb7b1a91dfac52df
 .env
 appsettings.Production.json
 rtlamr2mqtt.yaml

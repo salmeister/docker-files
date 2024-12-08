@@ -1,0 +1,49 @@
+
+services:
+  recipes-db:
+    restart: unless-stopped
+    container_name: recipes-db
+    image: postgres:16-alpine
+#    healthcheck:
+#      test: ["CMD-SHELL", "pg_isready"]
+#      interval: 30s
+#      timeout: 5s
+#      retries: 30
+#    expose:
+#      - ${POSTGRES_PORT}
+    volumes:
+      - ./db:/var/lib/postgresql/data
+    env_file:
+      - ./.env
+    networks:
+      - shared-net
+
+  recipes:
+    image: vabene1111/recipes:latest
+    container_name: recipes
+    restart: unless-stopped
+    ports:
+      - 8002:8080
+    env_file:
+      - ./.env
+    networks:
+      - shared-net
+    environment:
+      - UID=1000
+      - GID=1002
+      - TZ=America/Chicago
+    volumes:
+      - ./static:/opt/recipes/staticfiles
+      - ./media:/opt/recipes/mediafiles
+    depends_on:
+      - recipes-db
+    labels:
+      - swag=enable
+      - swag_port=8002
+      - swag_address=recipes
+      - swag_url=recipes.salmeister.com
+
+networks:
+  shared-net:
+    external: true
+    name: shared-net

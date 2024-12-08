@@ -1,0 +1,41 @@
+version: "3.7"
+
+services:
+  mybudget-db:
+    container_name: mybudget-db
+    image: mcr.microsoft.com/mssql/server:2019-CU13-ubuntu-20.04
+    user: root
+    restart: unless-stopped
+    deploy:
+      labels:
+        - "com.centurylinklabs.watchtower.enable=false"
+    environment:
+      - "ACCEPT_EULA=Y"
+      - SA_PASSWORD=run/secrets/psswd.txt
+    ports:
+      - 1433:1433
+    volumes:
+      - type: volume
+        source: mybudget-data
+        target: /var/opt/mssql
+    secrets:
+      - psswd
+
+  mybudget-webui:
+    container_name: mybudget-webui
+    image: dockerhub.salmeister.com/mybudget-webui:latest
+    restart: unless-stopped
+    deploy:
+      labels:
+        - "com.centurylinklabs.watchtower.enable=false"
+    environment:
+      - "CONNECTIONSTRINGS:MYBUDGET=${CONNSTRING}"
+    ports:
+      - 8089:80
+    depends_on:
+      - mybudget-db
+volumes:
+  mybudget-data:
+secrets:
+  psswd:
+    file: psswd.txt
