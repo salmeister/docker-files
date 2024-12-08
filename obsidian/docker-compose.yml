@@ -14,12 +14,12 @@ services:
       - ./etc/local.d:/opt/couchdb/etc/local.d
       - ./log:/opt/couchdb/var/log/couchdb
     ports:
-      - "5984:5984"
+      - 5984:5984
     restart: unless-stopped
     labels:
       - swag=enable
-      - swag_port:5984
-      - swag_url:notes.*
+      - swag_port=5984
+      - swag_url=notes.*
 
 networks:
   default:

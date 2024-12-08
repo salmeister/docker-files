@@ -130,7 +130,6 @@ services:
     labels:
       - swag=enable
       - swag_port=9876
-      - swag_address=code-server
       - swag_url=vscode.*
 
   esphome:
