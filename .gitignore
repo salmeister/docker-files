@@ -8,6 +8,7 @@ db/
 etc/
 var/
 data/
+dataV2/
 media/
 config/
 conf/
@@ -25,6 +26,7 @@ vsixs/
 dav/
 *.txt
 *.subdomain.conf
+.save
 .env
 appsettings.Production.json
 rtlamr2mqtt.yaml
