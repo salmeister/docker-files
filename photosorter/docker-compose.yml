@@ -4,7 +4,7 @@ services:
         container_name: photosorter
         labels:
           - swag=enable
-          - swag_address=photosorter
+          - swag_address=192.168.1.3
           - swag_url=photosorter.*
           - swag_port=8500
         ports:
