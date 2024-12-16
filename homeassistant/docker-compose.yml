@@ -157,7 +157,7 @@ services:
     container_name: frigate
     privileged: true # this may not be necessary for all setups
     restart: unless-stopped
-    image: ghcr.io/blakeblackshear/frigate:stable
+    image: ghcr.io/blakeblackshear/frigate:0.15.0-beta3
     networks:
       - shared-net
     shm_size: "128mb"
@@ -175,14 +175,14 @@ services:
       - "8971:8971"
       - "5555:5000"
       - "8554:8554"
-      - "8555:8555/tcp"
-      - "8555:8555/udp"
+      - "8555:8555"
     env_file:
       - ./frigate/.env
     labels:
       - swag=enable
       - swag_port=8971
       - swag_url=frigate.*
+      - swag_auth_bypass=/api
 
   homeassistant:
     container_name: homeassistant
